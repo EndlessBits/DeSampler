@@ -1,0 +1,8 @@
+ofxFft
+ofxFontStash
+ofxKu
+ofxKuTextGui
+ofxOsc
+ofxSoundUtils
+ofxTSNE
+ofxWindows

@@ -188,6 +188,8 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Instrument.cpp" />
+    <ClCompile Include="src\KeyboardLayout.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\App.cpp" />
@@ -262,6 +264,8 @@
     <ClCompile Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Instrument.h" />
+    <ClInclude Include="src\KeyboardLayout.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\App.h" />
     <ClInclude Include="src\gui_generated.h" />
@@ -356,6 +360,7 @@
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxTSNE\src\bhtsne\vptree.h" />
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxTSNE\src\ofxTSNE.h" />
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.h" />
+    <ClInclude Include="src\Types.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

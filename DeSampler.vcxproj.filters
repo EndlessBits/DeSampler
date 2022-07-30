@@ -223,6 +223,12 @@
     <ClCompile Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp">
       <Filter>addons\ofxWindows\src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Instrument.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\KeyboardLayout.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -607,6 +613,15 @@
     </ClInclude>
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.h">
       <Filter>addons\ofxWindows\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Types.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Instrument.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\KeyboardLayout.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

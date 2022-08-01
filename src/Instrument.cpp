@@ -76,7 +76,7 @@ void Instrument::draw() {
 	// Pads
 	for (int y = 0; y < PadsCountY; y++) {
 		for (int x = 0; x < PadsCountX; x++) {
-			UI.draw_button(PadCorner, x, y, PadBanksTitles[x + 1] + ":" + ofToString(y + 1), 0);
+			UI.draw_button(PadCorner, x, y, PadBanksTitles[y] + ":" + ofToString(x + 1), 0);
 		}
 	}
 	// Instr

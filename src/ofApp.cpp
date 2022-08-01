@@ -16,11 +16,12 @@ void ofApp::setup(){
 	cout << "-----------------------------------------------------------------" << endl;
 	cout << Title << endl;
 	cout << "-----------------------------------------------------------------" << endl;
-	cout << "Keys: Esc - exit, Return - hide/show GUI" << endl;
+	cout << "Keys: Esc - exit" << endl;
+/*	cout << " Return - hide / show GUI" << endl;
 	cout << "Cursor,mouse click - choose parameter" << endl;
 	cout << "[,], drag with LMB - change parameter slowly" << endl;
 	cout << "{,}, drag with RMB - change parameter faster" << endl;
-	cout << "F2, F3 - save/load params" << endl;
+	cout << "F2, F3 - save/load params" << endl; */
 	cout << "Shift+g - generate code using gui/gui-script.ini" << endl;
 	cout << "-----------------------------------------------------------------" << endl;
 	ofSetWindowShape(1400, 800);
@@ -108,10 +109,10 @@ void ofApp::draw() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	if (key == OF_KEY_RETURN) draw_gui = 1 - draw_gui;
+	// if (key == OF_KEY_RETURN) draw_gui = 1 - draw_gui;
 
-	if (key == OF_KEY_F2) save(); 
-	if (key == OF_KEY_F3) load();
+	// if (key == OF_KEY_F2) save(); 
+	// if (key == OF_KEY_F3) load();
 
 	if (key == 'G') {   //Generate .H and .CPP files for parameters
 		ofxKuTextGuiGen::generateCPP("gui/gui-script.ini",
@@ -119,7 +120,7 @@ void ofApp::keyPressed(int key){
 			"Parameters", "params", "PRM");
 		flash();
 	}
-	gui.keyPressed(key);
+	// gui.keyPressed(key);
 }
 
 //--------------------------------------------------------------

@@ -8,6 +8,8 @@ struct UIClass {
 
 	// x, y - position in buttons
 	void draw_button(glm::int2 pos0, int x, int y, string title, int state);
+
+	ofTrueTypeFont font_;
 };
 
 extern UIClass UI;

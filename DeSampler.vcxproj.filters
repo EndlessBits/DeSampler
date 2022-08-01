@@ -229,6 +229,9 @@
     <ClCompile Include="src\KeyboardLayout.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\UI.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -621,6 +624,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\KeyboardLayout.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UI.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

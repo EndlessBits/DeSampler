@@ -262,6 +262,7 @@
     <ClCompile Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxTSNE\src\bhtsne\tsne.cpp" />
     <ClCompile Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxTSNE\src\ofxTSNE.cpp" />
     <ClCompile Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp" />
+    <ClCompile Include="src\UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Instrument.h" />
@@ -361,6 +362,7 @@
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxTSNE\src\ofxTSNE.h" />
     <ClInclude Include="..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.h" />
     <ClInclude Include="src\Types.h" />
+    <ClInclude Include="src\UI.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

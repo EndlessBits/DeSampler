@@ -9,34 +9,14 @@ InputKeys INPUT_KEYS;
 
 //--------------------------------------------------------------
 void InputKeys::setup(){
-	setup_key_vk();
-}
-
-//--------------------------------------------------------------
-//Virtual keys
-//https://docs.microsoft.com/ru-ru/windows/win32/inputdev/virtual-key-codes
-void InputKeys::setup_key_vk() {
-	key_vk_ = { {
-			// Pads
-			'1','2','3','4','5','6','7','8',
-			'Q','W','E','R','T','Y','U','I',
-			'A','S','D','F','G','H','J','K',
-			'Z','X','C','V','B','N','M',',',
-			// Instruments
-			VK_F5, VK_F6, VK_F7, VK_F8,
-			// Complexity
-			'9', '0', '-', '=',
-			// Control
-			VK_SPACE		//Rec sample
-		} };
-	de_assert(key_vk_.size() == KeysCount, "Bad key_vk_ size");
+	state_.resize(KeysCount);
 }
 
 //--------------------------------------------------------------
 
 int InputKeys::get_key_VK(int i) {	// Convert key index to virtual keyboard index
 	de_assert(i >= 0 && i < KeysCount, "get_key_VK: Bad key index " + ofToString(i));
-	return key_vk_[i];
+	return KeysVK[i];
 }
 
 //--------------------------------------------------------------
@@ -87,8 +67,8 @@ vector<KeyEvent> InputKeys::get_events() {	// Compute current events
 	events_.clear();
 	for (int i = 0; i < KeysCount; i++) {
 		int8 new_state = (ofxWindows::capture_key_state(get_key_VK(i)) != 0);
-		if (new_state != state_.state[i]) {
-			state_.state[i] = new_state;
+		if (new_state != state_[i]) {
+			state_[i] = new_state;
 			events_.push_back({ key_index_to_descr(i), new_state });
 		}
 	}

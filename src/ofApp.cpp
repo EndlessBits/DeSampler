@@ -5,7 +5,7 @@
 
 ofxKuTextGui gui;
 
-int draw_gui = 1;
+int draw_gui = 0; //1;
 float flash_ = -1000;	//flash time
 
 string Title = "DeSampler 1.01";
@@ -77,7 +77,7 @@ void ofApp::update(){
 
 	//-----------------------
 	//GUI
-	gui.update();
+	// gui.update();
 	//-----------------------
 	app_.update();
 	//-----------------------
@@ -134,17 +134,17 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button) {
-	gui.mouseDragged(x, y, button);
+	// gui.mouseDragged(x, y, button);
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button) {
-	gui.mousePressed(x, y, button);
+	// gui.mousePressed(x, y, button);
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button) {
-	gui.mouseReleased(x, y, button);
+	// gui.mouseReleased(x, y, button);
 }
 
 //--------------------------------------------------------------

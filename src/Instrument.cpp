@@ -2,6 +2,7 @@
 
 #include "gui_generated.h"
 #include "ofxWindows.h"
+#include "UI.h"
 
 extern ofxKuTextGui gui;	//access to GUI object
 
@@ -72,7 +73,24 @@ void Instrument::on_rec_sample_changed(int8 state) {
 
 //--------------------------------------------------------------
 void Instrument::draw() {
-
+	// Pads
+	for (int y = 0; y < PadsCountY; y++) {
+		for (int x = 0; x < PadsCountX; x++) {
+			UI.draw_button(PadCorner, x, y, PadBanksTitles[x + 1] + ":" + ofToString(y + 1), 0);
+		}
+	}
+	// Instr
+	for (int x = 0; x < InstrCount; x++) {
+		UI.draw_button(InstrCorner, x, 0, InstrTitles[x], 0);
+	}
+	// Complexity
+	for (int x = 0; x < ComplexityCount; x++) {
+		UI.draw_button(ComplexityCorner, x, 0, ComplexityTitles[x], 0);
+	}
+	// Control
+	for (int x = 0; x < ControlCount; x++) {
+		UI.draw_button(ControlCorner, x, 0, ControlTitles[x], 0);
+	}
 }
 
 //--------------------------------------------------------------

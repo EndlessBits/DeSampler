@@ -27,6 +27,12 @@ void UIClass::draw_button(glm::int2 pos0, int x, int y, string title, int state)
 	float X = x0 + (w1 + spacex) * (pos0.x + x);
 	float Y = y0 + (h1 + spacey) * (pos0.y + y);
 
+	if (state) {
+		ofSetColor(200,200,100);
+		ofFill();
+		ofDrawRectangle(X, Y, w1, h1);
+	}
+
 	ofSetColor(255);
 	ofNoFill();
 	ofDrawRectangle(X, Y, w1, h1);

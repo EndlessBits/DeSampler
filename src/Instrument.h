@@ -4,17 +4,21 @@
 #include "Types.h"
 #include "InputKeys.h"
 
+struct InstrumentState {
+	vector<int8> pads;
+	int8 instr = 0;
+	int8 complexity = 0;
+	vector<int8> control;
+	InstrumentState();
+};
+
 struct Instrument {
 	void setup();
 	void update();
 	void draw();
 
 protected:
-	vector<int8> pads_;
-	int8 instr_ = 0;
-	int8 complexity_ = 0;
-	int8 rec_sample_ = 0;
-
+	InstrumentState state_;
 	void process_keyboard_events();
 	void on_pad_changed(int8 i, int8 state);
 	void on_instrument_selected(int8 i);

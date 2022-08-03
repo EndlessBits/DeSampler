@@ -4,6 +4,7 @@
 #include "InputKeys.h"
 #include "UI.h"
 #include "Instrument.h"
+#include "Sound.h"
 
 
 extern ofxKuTextGui gui;	//access to GUI object
@@ -15,6 +16,13 @@ void App::setup(){
 	INPUT_KEYS.setup();
 	UI.setup();
 	INSTR.setup();
+
+	SOUND.setup();
+}
+
+//--------------------------------------------------------------
+void App::exit() {
+	SOUND.exit();
 }
 
 //--------------------------------------------------------------

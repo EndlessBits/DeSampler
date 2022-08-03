@@ -17,6 +17,8 @@ struct Instrument {
 	void update();
 	void draw();
 
+	void at_update();	// update in audio thread
+
 protected:
 	InstrumentState state_;
 	void process_keyboard_events();

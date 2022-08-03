@@ -23,7 +23,11 @@ void Instrument::setup() {
 
 //--------------------------------------------------------------
 void Instrument::update() {
-	// Now get events here, but later will put into audio thread
+	// process_keyboard_events();	// we will process keys as autio thread at_update()
+}
+
+//--------------------------------------------------------------
+void Instrument::at_update() {	// update in audio thread
 	process_keyboard_events();
 }
 

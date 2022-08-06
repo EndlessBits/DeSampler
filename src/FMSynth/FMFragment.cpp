@@ -1,4 +1,4 @@
-#include "FMSynth.h"
+#include "FMFragment.h"
 
 #include "gui_generated.h"
 #include "InputKeys.h"
@@ -10,44 +10,35 @@
 extern ofxKuTextGui gui;	//access to GUI object
 	
 //--------------------------------------------------------------
-void FMSynth::setup(){
+void FMFragment::setup(){
 }
 
 //--------------------------------------------------------------
-void FMSynth::exit() {
-
-}
-
-//--------------------------------------------------------------
-void FMSynth::update(){
+void FMFragment::exit() {
 
 }
 
 //--------------------------------------------------------------
-void FMSynth::draw() {
+void FMFragment::update(){
 
 }
 
 //--------------------------------------------------------------
-// It's expected that sample rate is set
-void FMSynth::generate_sound(SoundSample& sample)
+void FMFragment::draw() {
+
+}
+
+//--------------------------------------------------------------
+// It's expected that memory is allocated
+void FMFragment::generate_sound(SoundSample& sample, int offset, int& written)
 {
-	int sr = sample.sample_rate;
-	de_assert(sr > 0, "FMSynth::generate_sound - bad input sample rate");
-	int offset = 0;
-	int d = duration(sr);
-	sample.allocate(d);
 
 }
 
 //--------------------------------------------------------------
-int FMSynth::duration(int sr)
+int FMFragment::duration(int sr)
 {
-	int d = 0;
-	for (auto& f : fragments_) {
-		d += f.duration(sr);
-	}
-	return d;
+	return ofxSoundUtils::ms_to_samples(duration_ms, sr);
 }
 
 //--------------------------------------------------------------

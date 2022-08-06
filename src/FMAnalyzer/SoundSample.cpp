@@ -10,5 +10,10 @@
 extern ofxKuTextGui gui;	//access to GUI object
 
 //--------------------------------------------------------------
+void SoundSample::allocate(int duration)
+{
+	data.resize(duration);
+	fill(data.begin(), data.end(), 0);
+}
 
 //--------------------------------------------------------------

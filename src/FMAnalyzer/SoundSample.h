@@ -3,6 +3,8 @@
 #include "ofMain.h"
 
 struct SoundSample {
-	int sample_rate = 44100;
+	int sample_rate = 44100;	
+
 	vector<float> data;
+	void allocate(int duration);
 };

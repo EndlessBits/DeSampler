@@ -32,6 +32,10 @@ void FMFragment::draw() {
 // It's expected that memory is allocated
 void FMFragment::generate_sound(SoundSample& sample, int offset, int& written)
 {
+	int sr = sample.sample_rate;
+	int d = duration(sr);
+	written = d;
+	de_assert(offset + d <= sample.data.size(), "FMFragment::generate_sound - allocated sample length inconsistency");
 
 }
 

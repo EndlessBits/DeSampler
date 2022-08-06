@@ -33,10 +33,16 @@ void FMSynth::draw() {
 void FMSynth::generate_sound(SoundSample& sample)
 {
 	int sr = sample.sample_rate;
-	de_assert(sr > 0, "FMSynth::generate_sound - bad input sample rate");
+	de_assert(sr > 0, "FMSynth::generate_sound - bad sample rate");
 	int offset = 0;
 	int d = duration(sr);
 	sample.allocate(d);
+	for (auto& f : fragments_)
+	{
+		int written;
+		f.generate_sound(sample, offset, written);
+		offset += written;
+	}
 
 }
 

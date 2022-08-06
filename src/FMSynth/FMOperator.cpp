@@ -1,4 +1,4 @@
-#include "FMAnalyzer.h"
+#include "FMOperator.h"
 
 #include "gui_generated.h"
 #include "InputKeys.h"
@@ -8,39 +8,39 @@
 
 
 extern ofxKuTextGui gui;	//access to GUI object
-
+	
 //--------------------------------------------------------------
-void FMAnalyzer::setup() {
+void FMOperator::setup(){
 }
 
 //--------------------------------------------------------------
-void FMAnalyzer::exit() {
-
-}
-
-//--------------------------------------------------------------
-void FMAnalyzer::update() {
+void FMOperator::exit() {
 
 }
 
 //--------------------------------------------------------------
-void FMAnalyzer::draw() {
+void FMOperator::update(){
 
 }
 
 //--------------------------------------------------------------
-void FMAnalyzer::reconstruct(const SoundSample& sample, FMSynth& synth)
+void FMOperator::draw() {
+
+}
+
+//--------------------------------------------------------------
+// It's expected that memory for sample is allocated
+void FMOperator::generate_sound(SoundSample& modulator, SoundSample& sample, int offset)
 {
-	// Fragments distribution:
-	// Most sound information contained at the started moments,
-	// so we distribute fragments more at the beginning and less at the end.
-	// Distributions: x^2, x^p, a^x.
+	int sr = sample.sample_rate;
+	int d = modulator.duration();
 
-	// Depending on type, we can have only 1-2 fragments, several, many.
+}
 
-	// sample rate:
-	// for raw analysis we use lower sample rates, and then increate it.
-
+//--------------------------------------------------------------
+int FMOperator::duration(int sr)
+{
+	return ofxSoundUtils::ms_to_samples(duration_ms, sr);
 }
 
 //--------------------------------------------------------------

@@ -36,6 +36,10 @@ void FMFragment::generate_sound(SoundSample& sample, int offset, int& written)
 	int d = duration(sr);
 	written = d;
 	de_assert(offset + d <= sample.data.size(), "FMFragment::generate_sound - allocated sample length inconsistency");
+	for (int i = 0; i < d; i++)
+	{
+
+	}
 
 }
 

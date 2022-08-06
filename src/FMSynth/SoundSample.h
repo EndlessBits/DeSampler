@@ -7,4 +7,5 @@ struct SoundSample {
 
 	vector<float> data;
 	void allocate(int duration);
+	int duration();
 };

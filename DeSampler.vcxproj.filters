@@ -241,10 +241,13 @@
     <ClCompile Include="src\FMSynth\FMSynth.cpp">
       <Filter>src\FMSynth</Filter>
     </ClCompile>
-    <ClCompile Include="src\FMAnalyzer\SoundSample.cpp">
-      <Filter>src\FMAnalyzer</Filter>
-    </ClCompile>
     <ClCompile Include="src\FMSynth\FMFragment.cpp">
+      <Filter>src\FMSynth</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FMSynth\FMOperator.cpp">
+      <Filter>src\FMSynth</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FMSynth\SoundSample.cpp">
       <Filter>src\FMSynth</Filter>
     </ClCompile>
   </ItemGroup>
@@ -659,10 +662,13 @@
     <ClInclude Include="src\FMSynth\FMSynth.h">
       <Filter>src\FMSynth</Filter>
     </ClInclude>
-    <ClInclude Include="src\FMAnalyzer\SoundSample.h">
-      <Filter>src\FMAnalyzer</Filter>
-    </ClInclude>
     <ClInclude Include="src\FMSynth\FMFragment.h">
+      <Filter>src\FMSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMSynth\FMOperator.h">
+      <Filter>src\FMSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMSynth\SoundSample.h">
       <Filter>src\FMSynth</Filter>
     </ClInclude>
   </ItemGroup>

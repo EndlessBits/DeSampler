@@ -241,6 +241,9 @@
     <ClCompile Include="src\FMSynth\FMSynth.cpp">
       <Filter>src\FMSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\FMAnalyzer\SoundSample.cpp">
+      <Filter>src\FMAnalyzer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -652,6 +655,9 @@
     </ClInclude>
     <ClInclude Include="src\FMSynth\FMSynth.h">
       <Filter>src\FMSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMAnalyzer\SoundSample.h">
+      <Filter>src\FMAnalyzer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

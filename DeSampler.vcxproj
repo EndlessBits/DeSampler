@@ -189,6 +189,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\FMAnalyzer\FMAnalyzer.cpp" />
+    <ClCompile Include="src\FMAnalyzer\SoundSample.cpp" />
     <ClCompile Include="src\FMSynth\FMSynth.cpp" />
     <ClCompile Include="src\Instrument.cpp" />
     <ClCompile Include="src\KeyboardLayout.cpp" />
@@ -269,6 +270,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\FMAnalyzer\FMAnalyzer.h" />
+    <ClInclude Include="src\FMAnalyzer\SoundSample.h" />
     <ClInclude Include="src\FMSynth\FMSynth.h" />
     <ClInclude Include="src\Instrument.h" />
     <ClInclude Include="src\KeyboardLayout.h" />

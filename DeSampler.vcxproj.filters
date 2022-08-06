@@ -235,6 +235,12 @@
     <ClCompile Include="src\Sound.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\FMAnalyzer\FMAnalyzer.cpp">
+      <Filter>src\FMAnalyzer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FMSynth\FMSynth.cpp">
+      <Filter>src\FMSynth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -332,6 +338,12 @@
     </Filter>
     <Filter Include="addons\ofxWindows\src">
       <UniqueIdentifier>{A7249455-FAE9-5B6E-EB3B-1DB5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FMSynth">
+      <UniqueIdentifier>{0b552dcf-955d-4617-8e7d-6b029bbdf16f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\FMAnalyzer">
+      <UniqueIdentifier>{49e40d27-5a45-429a-9a3d-356a2ed861d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -634,6 +646,12 @@
     </ClInclude>
     <ClInclude Include="src\Sound.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMAnalyzer\FMAnalyzer.h">
+      <Filter>src\FMAnalyzer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMSynth\FMSynth.h">
+      <Filter>src\FMSynth</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -13,7 +13,7 @@ public:
 	void draw();
 
 	// It's expected that sample rate is set
-	void generate_sound(SoundSample &sample);	
+	void generate_sound(SoundSample& out_buffer);
 
 	vector<FMFragment> fragments_;
 

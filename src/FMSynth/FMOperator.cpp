@@ -29,18 +29,22 @@ void FMOperator::draw() {
 }
 
 //--------------------------------------------------------------
-// It's expected that memory for sample is allocated
-void FMOperator::generate_sound(SoundSample& modulator, SoundSample& sample, int offset)
+// It's expected that memory for out_buffer is allocated
+// modulator can be an empty array, so sample rate is used from sample
+void FMOperator::generate_sound_add(const SoundSample& modulator, SoundSample& out_buffer, int offset)
 {
-	int sr = sample.sample_rate;
+	int sr = out_buffer.sample_rate;
 	int d = modulator.duration();
+	if (modulator.data.empty())
+	{
 
-}
+	}
+	else 
+	{
+		de_assert(modulator.duration() == out_buffer.duration(), "FMOperator::generate_sound_add - Bad modulator or out_buffer size")
+	}
 
-//--------------------------------------------------------------
-int FMOperator::duration(int sr)
-{
-	return ofxSoundUtils::ms_to_samples(duration_ms, sr);
+
 }
 
 //--------------------------------------------------------------

@@ -30,17 +30,17 @@ void FMSynth::draw() {
 
 //--------------------------------------------------------------
 // It's expected that sample rate is set
-void FMSynth::generate_sound(SoundSample& sample)
+void FMSynth::generate_sound(SoundSample& out_buffer)
 {
-	int sr = sample.sample_rate;
+	int sr = out_buffer.sample_rate;
 	de_assert(sr > 0, "FMSynth::generate_sound - bad sample rate");
 	int offset = 0;
 	int d = duration(sr);
-	sample.allocate(d);
+	out_buffer.allocate(d);
 	for (auto& f : fragments_)
 	{
 		int written;
-		f.generate_sound(sample, offset, written);
+		f.generate_sound(out_buffer, offset, written);
 		offset += written;
 	}
 

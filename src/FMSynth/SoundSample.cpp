@@ -17,7 +17,7 @@ void SoundSample::allocate(int duration)
 }
 
 //--------------------------------------------------------------
-int SoundSample::duration()
+int SoundSample::duration() const
 {
 	return data.size();
 }

@@ -6,13 +6,28 @@
 
 // Operator creates sound using pre-rendered modulator frequencies (it can be const too)
 
-enum class FMOperatorType
+// Freq ramp and amplitude ramps are included at each operator.
+// Here thay are linear, but we should use their as arguments for exp.
+struct FMLinearRamp
 {
-	Const = 0,
-	Ramp,
-	Sin,
-	Square,
+	float value0 = 0;
+	float value1 = 0;
+	float value(int i, int duration) const {
+		if (duration > 1)
+		{
+			// Note: last value not approach value1, last point is excluded - it's required for continuing
+			return (value1 - value0) * i / duration + value0;
+		}
+		return value0;
+	}
+}; 
+
+// Wave shape
+enum class FMOperatorWave
+{
+	Sine = 0,
 	Triangle,
+	Square,
 	Saw,
 	Noise
 };
@@ -26,12 +41,12 @@ public:
 	void draw();
 
 	// It's expected that memory for sample is allocated
-	void generate_sound(SoundSample& modulator, SoundSample &sample, int offset);
+	// modulator can be an empty array, so sample rate is used from sample
+	void generate_sound_add(const SoundSample& modulator, SoundSample &out_buffer, int offset);
 
-	FMOperatorType type = FMOperatorType::Const;
-
-	int duration(int sr);
-	float duration_ms = 0;
+	FMOperatorWave wave = FMOperatorWave::Sine;
+	FMLinearRamp amp_ramp;
+	FMLinearRamp freq_ramp;
 
 
 };

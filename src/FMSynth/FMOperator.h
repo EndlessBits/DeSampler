@@ -48,8 +48,8 @@ public:
 
 	// Sound generation
 	// It's expected that memory for sample is allocated
-	// modulator can be an empty array, so sample rate is used from sample
-	void generate_sound_add(const SoundSample& modulator, SoundSample& out_buffer, int offset);
+	// modulator can be an nullptr, so sample rate is used from sample
+	void render_sound_add(SoundSampleType* modulator, SoundSampleType* out_buffer, int sr, int duration);
 
 protected:
 	FMShared* shared_ = nullptr;

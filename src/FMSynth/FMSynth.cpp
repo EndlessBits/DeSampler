@@ -25,20 +25,44 @@ void FMSynth::setup(FMShared shared, vector<float> durations_ms, vector<FMFragme
 }
 
 //--------------------------------------------------------------
-// It's expected that sample rate is set
-void FMSynth::generate_sound(SoundSample& out_buffer)
+int FMSynth::get_duration(int i, int sr)
 {
-	int sr = out_buffer.sample_rate;
-	de_assert(sr > 0, "FMSynth::generate_sound - bad sample rate");
+	return ofxSoundUtils::ms_to_samples(durations_ms_[i], sr);
+}
+
+//--------------------------------------------------------------
+int FMSynth::get_duration(int sr)
+{
+	return ofxSoundUtils::ms_to_samples(duration_ms_, sr);
+}
+
+//--------------------------------------------------------------
+void FMSynth::allocate_buffers(int sr)
+{
+	for (int i = 0; i < size_; i++)
+	{
+		fragments_[i].allocate_buffers(get_duration(i, sr));
+	}
+	out_buffer_.allocate(get_duration(sr));
+}
+
+//--------------------------------------------------------------
+// It's expected that sample rate is set
+void FMSynth::render_sound()
+{
+	de_assert(!out_buffer_.empty(), "FMSynth::render_sound - need to call allocate_buffers");
+	int sr = out_buffer_.sample_rate;
 	int offset = 0;
-	int d = ofxSoundUtils::ms_to_samples(duration_ms_, sr);
-	out_buffer.allocate(d);
+	
+	// Clear buffer
+	out_buffer_.fill_zero();
+
+	// Render
 	for (int i=0; i<size_; i++)
 	{
 		auto& f = fragments_[i];
 		auto d = ofxSoundUtils::ms_to_samples(durations_ms_[i], sr);
-		f.allocate_buffers(d);		// TODO for multiple generation can allocate it once
-		f.generate_sound(out_buffer, offset, d);
+		f.render_sound(out_buffer_, offset, d);
 		offset += d;
 	}
 
@@ -64,6 +88,10 @@ void FMSynth::test_topology()
 void FMSynth::test_generation()
 {
 	cout << "Test generation" << endl;
+
+	int sr = 44100;
+	allocate_buffers(sr);
+	render_sound();
 
 }
 

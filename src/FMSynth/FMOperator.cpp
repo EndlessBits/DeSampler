@@ -28,21 +28,19 @@ void FMOperator::setup(FMShared* shared, FMOperatorWave wave, const FMLinearRamp
 
 //--------------------------------------------------------------
 // It's expected that memory for out_buffer is allocated
-// modulator can be an empty array, so sample rate is used from sample
-void FMOperator::generate_sound_add(const SoundSample& modulator, SoundSample& out_buffer, int offset)
+// modulator can be an nullptr, so sample rate is used from sample
+void FMOperator::render_sound_add(SoundSampleType* modulator, SoundSampleType* out_buffer, int sr, int duration)
 {
-	int sr = out_buffer.sample_rate;
-	int d = out_buffer.duration();
-	if (modulator.data.empty())
+	de_assert(out_buffer, "FMOperator::render_sound_add - out_buffer == nullptr");
+	if (modulator == nullptr)
 	{
-		// No modulator
-
+		// No modulator, TODO implement
+		de_exception("FMOperator::render_sound_add - modulator == nullptr case not implemented");
 	}
 	else 
 	{
 		// Modulator presented
-		de_assert(modulator.duration() == d, "FMOperator::generate_sound_add - Bad modulator or out_buffer size");
-		for (int i = 0; i < d; i++)
+		for (int i = 0; i < duration; i++)
 		{
 			//float amp = FM
 		}

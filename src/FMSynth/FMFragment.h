@@ -31,7 +31,7 @@ public:
 	// It's expected that memory for out_buffer is allocated and set its sample_rate,
     // and allocate_buffers are called
     void allocate_buffers(int max_duration); 
-    void generate_sound(SoundSample& out_buffer, size_t offset, size_t duration);
+    void render_sound(SoundSample& out_buffer, size_t offset, size_t duration);
 
 protected:
     // Structure
@@ -42,5 +42,6 @@ protected:
     // Sound generation
     int max_duration_ = 0;
     vector<SoundSample> buffers_;    // Buffers for storing intermediate waveforms
+    void clear_buffers();
 
 };

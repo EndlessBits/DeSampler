@@ -4,10 +4,15 @@
 
 // Audio buffer
 
+typedef float SoundSampleType;
+
 struct SoundSample {
 	int sample_rate = 44100;	
 
-	vector<float> data;
+	vector<SoundSampleType> data;
 	void allocate(int duration);
 	int duration() const;
+	bool empty() const;
+	void fill_zero();
+	SoundSampleType* data_ptr();
 };

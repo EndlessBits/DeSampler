@@ -21,7 +21,8 @@ public:
 
 	// Sound generation
 	// It's expected that sample rate is set
-	void generate_sound(SoundSample& out_buffer);
+	void allocate_buffers(int sample_rate);
+	void render_sound();
 
 
 protected:
@@ -34,6 +35,9 @@ protected:
 	float duration_ms_ = 0;
 
 	// Sound generation
+	int get_duration(int i, int sr);
+	int get_duration(int sr);
 
+	SoundSample out_buffer_;
 
 };

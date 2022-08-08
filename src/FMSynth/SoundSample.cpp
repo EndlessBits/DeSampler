@@ -23,3 +23,23 @@ int SoundSample::duration() const
 }
 
 //--------------------------------------------------------------
+bool SoundSample::empty() const
+{
+	return data.size() > 0;
+}
+
+//--------------------------------------------------------------
+void SoundSample::fill_zero()
+{
+	fill(data.begin(), data.end(), 0);
+}
+
+//--------------------------------------------------------------
+SoundSampleType* SoundSample::data_ptr()
+{
+	if (empty()) return nullptr;
+	return data.data();
+
+}
+
+//--------------------------------------------------------------

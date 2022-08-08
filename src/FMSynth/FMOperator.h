@@ -4,7 +4,10 @@
 #include "SoundSample.h"
 #include "ofxSoundUtils.h"
 
-// Operator creates sound using pre-rendered modulator frequencies (it can be const too)
+// FM Operator generates sound using given pre-rendered modulator buffer.
+// It has ramp for its own carrier frequency and ramp for output volume.
+// It writes result into some buffer (other operator input or audio input) additively.
+
 
 // Freq ramp and amplitude ramps are included at each operator.
 // Here thay are linear, but we should use their as arguments for exp.
@@ -22,7 +25,7 @@ struct FMLinearRamp
 	}
 }; 
 
-// Wave shape
+// Wave shape for operator
 enum class FMOperatorWave
 {
 	Sine = 0,
@@ -32,21 +35,27 @@ enum class FMOperatorWave
 	Noise
 };
 
+class FMShared;
+
 class FMOperator 
 {
 public:
-	void setup();
-	void exit();
-	void update();
-	void draw();
+	FMOperator() {}
+	FMOperator(FMShared* shared, FMOperatorWave wave, const FMLinearRamp& freq_ramp, const FMLinearRamp& amp_ramp);
 
+	// Structure 
+	void setup(FMShared *shared, FMOperatorWave wave, const FMLinearRamp &freq_ramp, const FMLinearRamp &amp_ramp);
+
+	// Sound generation
 	// It's expected that memory for sample is allocated
 	// modulator can be an empty array, so sample rate is used from sample
-	void generate_sound_add(const SoundSample& modulator, SoundSample &out_buffer, int offset);
+	void generate_sound_add(const SoundSample& modulator, SoundSample& out_buffer, int offset);
 
-	FMOperatorWave wave = FMOperatorWave::Sine;
-	FMLinearRamp amp_ramp;
-	FMLinearRamp freq_ramp;
+protected:
+	FMShared* shared_ = nullptr;
+	FMOperatorWave wave_ = FMOperatorWave::Sine;
 
+	FMLinearRamp freq_ramp_;
+	FMLinearRamp amp_ramp_;
 
 };

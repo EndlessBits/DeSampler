@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "Types.h"
 #include "InputKeys.h"
+#include "FMSynth.h"
 
 struct InstrumentState {
 	vector<int8> pads;
@@ -16,6 +17,7 @@ struct Instrument {
 	void setup();
 	void update();
 	void draw();
+	void keyPressed(int key);
 
 	void at_update();	// update in audio thread
 
@@ -28,7 +30,7 @@ protected:
 
 	void on_rec_sample_changed(int8 state);
 
-
+	FMSynth synth_;
 };
 
 extern Instrument INSTR;

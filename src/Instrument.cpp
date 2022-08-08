@@ -18,7 +18,7 @@ InstrumentState::InstrumentState() {
 //--------------------------------------------------------------
 //--------------------------------------------------------------
 void Instrument::setup() {
-	
+	//synth_.setup();
 }
 
 //--------------------------------------------------------------
@@ -29,6 +29,16 @@ void Instrument::update() {
 //--------------------------------------------------------------
 void Instrument::at_update() {	// update in audio thread
 	process_keyboard_events();
+}
+
+//--------------------------------------------------------------
+void Instrument::keyPressed(int key)
+{
+	if (key == '!')
+	{
+		synth_.test_topology();
+		synth_.test_generation();
+	}
 }
 
 //--------------------------------------------------------------

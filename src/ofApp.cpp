@@ -120,8 +120,11 @@ void ofApp::keyPressed(int key){
 			"../../src/", "gui_generated",
 			"Parameters", "params", "PRM");
 		flash();
+		return;
 	}
 	// gui.keyPressed(key);
+
+	app_.keyPressed(key);
 }
 
 //--------------------------------------------------------------

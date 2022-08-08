@@ -2,9 +2,13 @@
 
 #include "ofMain.h"
 #include "SoundSample.h"
+#include "FMShared.h"
+#include "FMOperator.h"
 #include "ofxSoundUtils.h"
 
-/*
+/* FM Fragment :
+  Consists of several FM Operators, built into a graph.
+  Operator can modulate other operator additively or output audio additively.
 
      *
       \ 
@@ -18,17 +22,24 @@
 */
 
 class FMFragment {
-public:
-	void setup();
-	void exit();
-	void update();
-	void draw();
+public:    
+    // Structure
+    void setup(FMShared *shared, const vector<int> &connections, const vector<FMOperator> &operators);
+   
+    // Sound generation
+	// It's expected that memory for out_buffer is allocated and set its sample_rate,
+    // and allocate_buffers are called
+    void allocate_buffers(int max_duration); 
+    void generate_sound(SoundSample& out_buffer, size_t offset, size_t duration);
 
-	// It's expected that memory for out_buffer is allocated and set its sample_rate
-	void generate_sound(SoundSample & out_buffer, int offset, int &written);
+protected:
+    // Structure
+    int size_ = 0;
+    vector<int> connections_;   // topology of operators, each operator additively writes to connection, -1 means audio output
+    vector<FMOperator> operators_;
 
-	int duration(int sr);
-	float duration_ms = 0;
-
+    // Sound generation
+    int max_duration_ = 0;
+    vector<SoundSample> buffers_;    // Buffers for storing intermediate waveforms
 
 };

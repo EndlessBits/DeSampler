@@ -2,6 +2,8 @@
 
 #include "ofMain.h"
 
+// Audio buffer
+
 struct SoundSample {
 	int sample_rate = 44100;	
 

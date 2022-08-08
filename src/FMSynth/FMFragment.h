@@ -24,6 +24,7 @@
 class FMFragment {
 public:    
     // Structure
+    FMFragment(FMShared* shared, const vector<int>& connections, const vector<FMOperator>& operators);
     void setup(FMShared *shared, const vector<int> &connections, const vector<FMOperator> &operators);
    
     // Sound generation
@@ -35,7 +36,7 @@ public:
 protected:
     // Structure
     int size_ = 0;
-    vector<int> connections_;   // topology of operators, each operator additively writes to connection, -1 means audio output
+    vector<int> connections_;   // Topological connection of operators, each operator additively writes to destination buffer, -1 means audio output
     vector<FMOperator> operators_;
 
     // Sound generation

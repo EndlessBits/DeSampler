@@ -10,6 +10,12 @@
 extern ofxKuTextGui gui;	//access to GUI object
 	
 //--------------------------------------------------------------
+FMFragment::FMFragment(FMShared* shared, const vector<int>& connections, const vector<FMOperator>& operators)
+{
+	setup(shared, connections, operators);
+}
+
+//--------------------------------------------------------------
 void FMFragment::setup(FMShared* shared, const vector<int>& connections, const vector<FMOperator>& operators)
 {
 	de_assert(connections.size() == operators.size(), "FMFragment::setup - connections and operators sizes are different");

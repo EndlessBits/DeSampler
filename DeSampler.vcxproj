@@ -191,6 +191,7 @@
     <ClCompile Include="src\FMAnalyzer\FMAnalyzer.cpp" />
     <ClCompile Include="src\FMSynth\FMFragment.cpp" />
     <ClCompile Include="src\FMSynth\FMOperator.cpp" />
+    <ClCompile Include="src\FMSynth\FMShared.cpp" />
     <ClCompile Include="src\FMSynth\FMSynth.cpp" />
     <ClCompile Include="src\FMSynth\SoundSample.cpp" />
     <ClCompile Include="src\Instrument.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="src\FMAnalyzer\FMAnalyzer.h" />
     <ClInclude Include="src\FMSynth\FMFragment.h" />
     <ClInclude Include="src\FMSynth\FMOperator.h" />
+    <ClInclude Include="src\FMSynth\FMShared.h" />
     <ClInclude Include="src\FMSynth\FMSynth.h" />
     <ClInclude Include="src\FMSynth\SoundSample.h" />
     <ClInclude Include="src\Instrument.h" />

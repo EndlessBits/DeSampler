@@ -193,6 +193,7 @@
     <ClCompile Include="src\FMSynth\FMOperator.cpp" />
     <ClCompile Include="src\FMSynth\FMShared.cpp" />
     <ClCompile Include="src\FMSynth\FMSynth.cpp" />
+    <ClCompile Include="src\FMSynth\FMWaveform.cpp" />
     <ClCompile Include="src\FMSynth\SoundSample.cpp" />
     <ClCompile Include="src\Instrument.cpp" />
     <ClCompile Include="src\KeyboardLayout.cpp" />
@@ -277,6 +278,7 @@
     <ClInclude Include="src\FMSynth\FMOperator.h" />
     <ClInclude Include="src\FMSynth\FMShared.h" />
     <ClInclude Include="src\FMSynth\FMSynth.h" />
+    <ClInclude Include="src\FMSynth\FMWaveform.h" />
     <ClInclude Include="src\FMSynth\SoundSample.h" />
     <ClInclude Include="src\Instrument.h" />
     <ClInclude Include="src\KeyboardLayout.h" />

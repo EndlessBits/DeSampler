@@ -10,20 +10,20 @@
 extern ofxKuTextGui gui;	//access to GUI object
 	
 //--------------------------------------------------------------
-FMOperator::FMOperator(FMShared* shared, FMOperatorWave wave, const FMLinearRamp& freq_ramp, const FMLinearRamp& amp_ramp)
+FMOperator::FMOperator(FMShared* shared, FMWaveformShape shape, const FMLinearRamp& freq_ramp, const FMLinearRamp& vol_ramp)
 {
-	setup(shared, wave, freq_ramp, amp_ramp);
+	setup(shared, shape, freq_ramp, vol_ramp);
 }
 
 //--------------------------------------------------------------
-void FMOperator::setup(FMShared* shared, FMOperatorWave wave, const FMLinearRamp& freq_ramp, const FMLinearRamp& amp_ramp)
+void FMOperator::setup(FMShared* shared, FMWaveformShape shape, const FMLinearRamp& freq_ramp, const FMLinearRamp& vol_ramp)
 {
 	de_assert(shared, "FMOperator::setup - shared == nullptr");
 
 	shared_ = shared;
-	wave_ = wave;
+	shape_ = shape;
 	freq_ramp_ = freq_ramp;
-	amp_ramp_ = amp_ramp;
+	vol_ramp_ = vol_ramp;
 }
 
 //--------------------------------------------------------------
@@ -40,9 +40,16 @@ void FMOperator::render_sound_add(SoundSampleType* modulator, SoundSampleType* o
 	else 
 	{
 		// Modulator presented
+		float phase = 0;
+		float phase_shift1Hz = ofxSoundUtils::sample_rate_to_phase_shift(sr);
 		for (int i = 0; i < duration; i++)
 		{
-			//float amp = FM
+			float vol = shared_->ramp_to_volume(vol_ramp_.value(i, duration)); // Volume ramp
+			float freq = shared_->ramp_to_freq(freq_ramp_.value(i, duration)); // Frequency ramp 
+			freq += modulator[i];		// Frequency modulation
+			float phase_shift = phase_shift1Hz * freq;	// TODO may use integer arithmetics, see Endless Synth
+			out_buffer[i] += vol * shared_->wavetable_unsafe(phase, shape_);
+			phase += phase_shift;
 		}
 	}
 

@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "SoundSample.h"
 #include "ofxSoundUtils.h"
+#include "FMWaveform.h"
 
 // FM Operator generates sound using given pre-rendered modulator buffer.
 // It has ramp for its own carrier frequency and ramp for output volume.
@@ -25,26 +26,16 @@ struct FMLinearRamp
 	}
 }; 
 
-// Wave shape for operator
-enum class FMOperatorWave
-{
-	Sine = 0,
-	Triangle,
-	Square,
-	Saw,
-	Noise
-};
-
 class FMShared;
 
 class FMOperator 
 {
 public:
 	FMOperator() {}
-	FMOperator(FMShared* shared, FMOperatorWave wave, const FMLinearRamp& freq_ramp, const FMLinearRamp& amp_ramp);
+	FMOperator(FMShared* shared, FMWaveformShape shape, const FMLinearRamp& freq_ramp, const FMLinearRamp& vol_ramp);
 
 	// Structure 
-	void setup(FMShared *shared, FMOperatorWave wave, const FMLinearRamp &freq_ramp, const FMLinearRamp &amp_ramp);
+	void setup(FMShared *shared, FMWaveformShape shape, const FMLinearRamp &freq_ramp, const FMLinearRamp &vol_ramp);
 
 	// Sound generation
 	// It's expected that memory for sample is allocated
@@ -53,9 +44,9 @@ public:
 
 protected:
 	FMShared* shared_ = nullptr;
-	FMOperatorWave wave_ = FMOperatorWave::Sine;
+	FMWaveformShape shape_ = FMWaveformShape::Sine;
 
 	FMLinearRamp freq_ramp_;
-	FMLinearRamp amp_ramp_;
+	FMLinearRamp vol_ramp_;
 
 };

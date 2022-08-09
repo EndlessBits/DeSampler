@@ -73,12 +73,16 @@ void FMSynth::test_topology()
 {
 	cout << "Test topology" << endl;
 
-	setup({ 1, 5000, 0, 1 },	// Shared freq0,1 vol0,1
+	int wavetable_lenth = 1024;
+	setup(FMShared(1, 5000, 0, 1, wavetable_lenth),	// Shared freq0,1 vol0,1, wavetable_lenth
 		{ 1000 },				// Durations
 		{	// Fragments
-			FMFragment( &shared_, { -1 }, { 
-				FMOperator(&shared_, FMOperatorWave::Sine, {440, 660}, {0.5, 0.5}) 
-			})
+			FMFragment( &shared_, 
+				{ -1 }, // Structure
+				{   // Operators
+					FMOperator(&shared_, FMWaveformShape::Sine, {440, 660}, {0.5, 0.5}) 
+				}
+			)
 		}
 		);
 

@@ -253,6 +253,9 @@
     <ClCompile Include="src\FMSynth\FMShared.cpp">
       <Filter>src\FMSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\FMSynth\FMWaveform.cpp">
+      <Filter>src\FMSynth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -675,6 +678,9 @@
       <Filter>src\FMSynth</Filter>
     </ClInclude>
     <ClInclude Include="src\FMSynth\FMShared.h">
+      <Filter>src\FMSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FMSynth\FMWaveform.h">
       <Filter>src\FMSynth</Filter>
     </ClInclude>
   </ItemGroup>

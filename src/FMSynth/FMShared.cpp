@@ -34,14 +34,13 @@ void FMShared::setup_internal()
 //--------------------------------------------------------------
 float FMShared::ramp_to_volume(float x)
 {
-	de_exception("ramp_to_volume - not implemented");
-	return 0;
+	return ofMap(exp(x),exp(0),exp(1),vol0, vol1);	//vol0..vol exponentially  // TODO table
 }
 
 //--------------------------------------------------------------
 float FMShared::ramp_to_freq(float x)
 {
-	de_exception("ramp_to_freq - not implemented");
+	return ofMap(exp(x), exp(0), exp(1), freq0, freq1);	//freq0..freq1 exponentially  // TODO table
 	return 0;
 }
 

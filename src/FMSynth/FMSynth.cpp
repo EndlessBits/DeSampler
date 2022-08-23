@@ -31,7 +31,7 @@ int FMSynth::get_duration(int i, int sr)
 }
 
 //--------------------------------------------------------------
-int FMSynth::get_duration(int sr)
+int FMSynth::get_total_duration(int sr)
 {
 	return ofxSoundUtils::ms_to_samples(duration_ms_, sr);
 }
@@ -43,7 +43,7 @@ void FMSynth::allocate_buffers(int sr)
 	{
 		fragments_[i].allocate_buffers(get_duration(i, sr));
 	}
-	out_buffer_.allocate(get_duration(sr));
+	out_buffer_.allocate(get_total_duration(sr));
 }
 
 //--------------------------------------------------------------

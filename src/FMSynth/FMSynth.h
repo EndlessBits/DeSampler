@@ -36,7 +36,7 @@ protected:
 
 	// Sound generation
 	int get_duration(int i, int sr);
-	int get_duration(int sr);
+	int get_total_duration(int sr);
 
 	SoundSample out_buffer_;
 

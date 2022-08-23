@@ -17,6 +17,7 @@ void ofApp::setup(){
 	cout << Title << endl;
 	cout << "-----------------------------------------------------------------" << endl;
 	cout << "Keys: Esc - exit" << endl;
+	cout << "Shift+1 - test generation" << endl;
 /*	cout << " Return - hide / show GUI" << endl;
 	cout << "Cursor,mouse click - choose parameter" << endl;
 	cout << "[,], drag with LMB - change parameter slowly" << endl;

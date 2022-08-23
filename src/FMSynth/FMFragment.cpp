@@ -30,6 +30,7 @@ void FMFragment::setup(FMShared* shared, const vector<int>& connections, const v
 //--------------------------------------------------------------
 void FMFragment::allocate_buffers(int max_duration)
 {
+	max_duration_ = max_duration;
 	// TODO can optimize by not clearing not used buffers
 	de_assert(max_duration_ > 0, "FMFragment::allocate_buffers - bad max_duration");
 	de_assert(size_ > 0, "FMFragment::allocate_buffers - fragment is not inited");
@@ -37,7 +38,7 @@ void FMFragment::allocate_buffers(int max_duration)
 	buffers_.resize(size_);
 	for (auto& b : buffers_)
 	{
-		b.allocate(max_duration);
+		b.allocate(max_duration_);
 	}
 }
 

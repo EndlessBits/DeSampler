@@ -25,7 +25,7 @@ int SoundSample::duration() const
 //--------------------------------------------------------------
 bool SoundSample::empty() const
 {
-	return data.size() > 0;
+	return data.empty();
 }
 
 //--------------------------------------------------------------

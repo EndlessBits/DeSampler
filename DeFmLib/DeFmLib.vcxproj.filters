@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\ofApp.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxEasyFft.cpp">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFft.cpp">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftBasic.cpp">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftw.cpp">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxProcessFFT.cpp">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fft.c">
+      <Filter>addons\ofxFft\libs\kiss</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fftr.c">
+      <Filter>addons\ofxFft\libs\kiss</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src\ofxFontStash.cpp">
+      <Filter>addons\ofxFontStash\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\fontstash.c">
+      <Filter>addons\ofxFontStash\libs\fontstash\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\stb_truetype.c">
+      <Filter>addons\ofxFontStash\libs\fontstash\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxArgs.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxIniSettings.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuCompress.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawPrimitives.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawRasters.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawUtils.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuExportFGA.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFile.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFileTime.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFloodFill.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeom.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeomMeshUtils.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraph.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraphicsTexture3D.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuImageSequence.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuLfo.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathFastSinCos.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMessageLog.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcManipulate.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcRasterize.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPreset.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPresetLooper.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuProbability.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRandom.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterArithmetics.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterOptFlow.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderBinary.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderStrings.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuSlowBit.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuStrings.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuTimeMeasure.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsBase64.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsCrc32.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuVideoMapping.cpp">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGui.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelope.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelopeEditor.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiGen.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiPreset.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiRemote.cpp">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscBundle.cpp">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscMessage.cpp">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscParameterSync.cpp">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscReceiver.cpp">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscSender.cpp">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32\UdpSocket.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip\win32</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src\ofxSoundUtils.cpp">
+      <Filter>addons\ofxSoundUtils\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp">
+      <Filter>addons\ofxWindows\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeFmSynth.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeParams.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons">
+      <UniqueIdentifier>{71834F65-F3A9-211E-73B8-DC85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft">
+      <UniqueIdentifier>{0D1BE4F5-A8D2-A343-7801-0B1D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft\src">
+      <UniqueIdentifier>{0BA62021-9DA8-B189-6926-0588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft\libs">
+      <UniqueIdentifier>{EF447299-49BE-7B01-BCA6-72C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft\libs\fftw">
+      <UniqueIdentifier>{3DEE1DDE-F123-B410-23AA-B80E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft\libs\fftw\include">
+      <UniqueIdentifier>{C97E21AA-DEFC-C216-6F14-EB6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFft\libs\kiss">
+      <UniqueIdentifier>{A0BA27B4-C5E4-04C4-6B66-DBD1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFontStash">
+      <UniqueIdentifier>{52833EC4-B632-6FCA-91CC-4AE6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFontStash\src">
+      <UniqueIdentifier>{49A40DDC-6572-4E0A-048E-2D04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFontStash\libs">
+      <UniqueIdentifier>{A8F1AC44-FC7C-BBBD-E0C9-B6EE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFontStash\libs\fontstash">
+      <UniqueIdentifier>{FE13F720-8FE1-4B82-AE17-C9C7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxFontStash\libs\fontstash\src">
+      <UniqueIdentifier>{74A9B8C3-6ADF-F872-4DE5-3A6C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxKu">
+      <UniqueIdentifier>{4B12CD5E-E3D4-45F7-312C-DC14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxKu\src">
+      <UniqueIdentifier>{CB3C7E49-3799-15D7-A8DC-7650}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxKuTextGui">
+      <UniqueIdentifier>{72A05D5C-9237-BA9F-72EF-BF82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxKuTextGui\src">
+      <UniqueIdentifier>{90AC4606-C021-4388-64FD-872C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc">
+      <UniqueIdentifier>{D91DCA33-6E5D-4481-2AEC-9FBB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\src">
+      <UniqueIdentifier>{B9DD339A-D93D-92A1-0A2F-4B41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs">
+      <UniqueIdentifier>{99ECA1D9-873F-4622-8FC0-FC7B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs\oscpack">
+      <UniqueIdentifier>{D3A98534-1602-4FEF-57A6-6593}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs\oscpack\src">
+      <UniqueIdentifier>{BFB5BB47-98C8-BBCB-3066-1046}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs\oscpack\src\ip">
+      <UniqueIdentifier>{5A029128-EB41-95C5-CBC0-CDED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs\oscpack\src\ip\win32">
+      <UniqueIdentifier>{79DFDFE2-400B-8654-3675-01A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxOsc\libs\oscpack\src\osc">
+      <UniqueIdentifier>{EDACB89C-9768-9551-4D41-B590}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxSoundUtils">
+      <UniqueIdentifier>{B8A24853-470D-3D7B-AD66-0D74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxSoundUtils\src">
+      <UniqueIdentifier>{A95F7C72-AF00-65EB-13B5-EDBE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxWindows">
+      <UniqueIdentifier>{C760BA22-7D17-B43D-5BEB-BCA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="addons\ofxWindows\src">
+      <UniqueIdentifier>{A7249455-FAE9-5B6E-EB3B-1DB5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DeFmSynth">
+      <UniqueIdentifier>{737ef0ec-d9b5-46a9-b15b-ce18caf573d3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ofApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxEasyFft.h">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFft.h">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftBasic.h">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftw.h">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxProcessFFT.h">
+      <Filter>addons\ofxFft\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include\fftw3.h">
+      <Filter>addons\ofxFft\libs\fftw\include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fft.h">
+      <Filter>addons\ofxFft\libs\kiss</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fftr.h">
+      <Filter>addons\ofxFft\libs\kiss</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\_kiss_fft_guts.h">
+      <Filter>addons\ofxFft\libs\kiss</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src\ofxFontStash.h">
+      <Filter>addons\ofxFontStash\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\fontstash.h">
+      <Filter>addons\ofxFontStash\libs\fontstash\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\stb_truetype.h">
+      <Filter>addons\ofxFontStash\libs\fontstash\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\int2.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\int_rect.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxArgs.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxIniSettings.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuCompress.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawPrimitives.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawRasters.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawUtils.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuExportFGA.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFile.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFileTime.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFloodFill.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeom.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeomMeshUtils.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraph.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraphicsTexture3D.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuImageSequence.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuLfo.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathFastSinCos.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathStat.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMessageLog.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcManipulate.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcRasterize.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPreset.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPresetLooper.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuProbability.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRandom.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRaster.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterArithmetics.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterBlur.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterInterpolate.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterMorphology.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterOptFlow.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterResize.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderBinary.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderStrings.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuSlowBit.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuStrings.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuTimeMeasure.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsBase64.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsCrc32.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueCheckChange.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueInterpolate.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueNonLinear.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueSmooth.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuVideoMapping.h">
+      <Filter>addons\ofxKu\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGui.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelope.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelopeEditor.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiGen.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiPreset.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiRemote.h">
+      <Filter>addons\ofxKuTextGui\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOsc.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscArg.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscBundle.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscMessage.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscParameterSync.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscReceiver.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscSender.h">
+      <Filter>addons\ofxOsc\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\NetworkingUtils.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\PacketListener.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\TimerListener.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\UdpSocket.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\ip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\MessageMappingOscPacketListener.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscException.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscHostEndianness.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPacketListener.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h">
+      <Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src\ofxSoundUtils.h">
+      <Filter>addons\ofxSoundUtils\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.h">
+      <Filter>addons\ofxWindows\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeTypesAssert.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeFmSynth.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeParams.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(WindowsTargetPlatformVersion)'==''">
+    <LatestTargetPlatformVersion>$([Microsoft.Build.Utilities.ToolLocationHelper]::GetLatestSDKTargetPlatformVersion('Windows', '10.0'))</LatestTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(WindowsTargetPlatformVersion)' == ''">10.0</WindowsTargetPlatformVersion>
+    <TargetPlatformVersion>$(WindowsTargetPlatformVersion)</TargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{7FD42DF7-442E-479A-BA76-D0022F99702A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DeFmLib</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../../../../of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../../../../of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksRelease.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../../../../of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="../../../../of_v0.10.1_vs2017_release/libs\openFrameworksCompiled\project\vs\openFrameworksDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_debug</TargetName>
+    <LinkIncremental>true</LinkIncremental>
+    <GenerateManifest>true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <PreprocessorDefinitions>USE_OFX_FONTSTASH</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <PreprocessorDefinitions>USE_OFX_FONTSTASH</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <PreprocessorDefinitions>USE_OFX_FONTSTASH</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib</AdditionalIncludeDirectories>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <PreprocessorDefinitions>USE_OFX_FONTSTASH</PreprocessorDefinitions>
+      <PreprocessorDefinitions>OSC_HOST_LITTLE_ENDIAN</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <PostBuildEvent />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\DeFmLib\DeFmSynth.cpp" />
+    <ClCompile Include="src\DeFmLib\DeParams.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxEasyFft.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFft.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftBasic.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftw.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxProcessFFT.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fft.c" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fftr.c" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src\ofxFontStash.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\fontstash.c" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\stb_truetype.c" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxArgs.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxIniSettings.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuCompress.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawPrimitives.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawRasters.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawUtils.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuExportFGA.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFile.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFileTime.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFloodFill.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeom.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeomMeshUtils.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraph.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraphicsTexture3D.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuImageSequence.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuLfo.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathFastSinCos.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMessageLog.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcManipulate.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcRasterize.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPreset.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPresetLooper.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuProbability.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRandom.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterArithmetics.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterOptFlow.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderBinary.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderStrings.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuSlowBit.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuStrings.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuTimeMeasure.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsBase64.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsCrc32.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuVideoMapping.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGui.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelope.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelopeEditor.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiGen.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiPreset.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiRemote.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscBundle.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscMessage.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscParameterSync.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscReceiver.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscSender.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32\NetworkingUtils.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32\UdpSocket.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src\ofxSoundUtils.cpp" />
+    <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\DeFmLib\DeFmSynth.h" />
+    <ClInclude Include="src\DeFmLib\DeParams.h" />
+    <ClInclude Include="src\DeFmLib\DeTypesAssert.h" />
+    <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxEasyFft.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFft.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftBasic.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxFftw.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src\ofxProcessFFT.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include\fftw3.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fft.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\kiss_fftr.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss\_kiss_fft_guts.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src\ofxFontStash.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\fontstash.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src\stb_truetype.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\int2.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\int_rect.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxArgs.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxIniSettings.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuCompress.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawPrimitives.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawRasters.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuDrawUtils.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuExportFGA.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFile.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFileTime.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuFloodFill.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeom.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGeomMeshUtils.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraph.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuGraphicsTexture3D.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuImageSequence.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuLfo.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathFastSinCos.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMathStat.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuMessageLog.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcManipulate.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPcRasterize.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPreset.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuPresetLooper.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuProbability.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRandom.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRaster.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterArithmetics.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterBlur.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterInterpolate.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterMorphology.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterOptFlow.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRasterResize.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderBinary.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuRecorderStrings.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuSlowBit.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuStrings.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuTimeMeasure.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsBase64.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuUtilsCrc32.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueCheckChange.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueInterpolate.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueNonLinear.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuValueSmooth.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src\ofxKuVideoMapping.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGui.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelope.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiEnvelopeEditor.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiGen.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiPreset.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src\ofxKuTextGuiRemote.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOsc.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscArg.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscBundle.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscMessage.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscParameterSync.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscReceiver.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src\ofxOscSender.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\IpEndpointName.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\NetworkingUtils.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\PacketListener.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\TimerListener.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\UdpSocket.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\MessageMappingOscPacketListener.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscException.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscHostEndianness.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscOutboundPacketStream.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPacketListener.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src\ofxSoundUtils.h" />
+    <ClInclude Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
+      <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="icon.rc">
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">/D_DEBUG %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalIncludeDirectories>$(OF_ROOT)\libs\openFrameworksCompiled\project\vs</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="icon.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

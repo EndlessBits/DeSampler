@@ -12,8 +12,10 @@ X5\  /
 X6/
 
 
-A0*wave(t*F0 + A1*wave(t*F1 + A2*wave(t*F2) + A3*wave(t*F3))
-            A4*wave(t*F4 + A5*wave(t*F5) + A6*wave(t*F6))
+A0*wave(t*(F0 
+           + A1*wave(t*(F1 + A2*wave(t*F2) + A3*wave(t*F3)))
+           + A4*wave(t*(F4 + A5*wave(t*F5) + A6*wave(t*F6))) 
+           ))
 
 Fi - частоты, Ai - амплитуды, меняются по времени как энвелопы,
 от 0 до 1 - и громкость и частота, оба логарифмические.

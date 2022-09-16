@@ -1,17 +1,17 @@
 #pragma once
 
 #include "ofMain.h"
-#include "FMWaveform.h"
+#include "DeTypesAssert.h"
 
 // FM synth shared params between fragments and operators
 class DeParams {
 public:
 	DeParams() {}
-	DeParams(float freq0, int midi_note1, float vol0, float vol1, int wavetable_lenth);
+	DeParams(float midi_note0, float midi_note1, float vol0, float vol1);
 
 	// Parameters
-	float freq0 = 1;
-	float freq1 = 5000;
+	float midi_note0 = 21;
+	float midi_note1 = 108;
 	float vol0 = 0;
 	float vol1 = 1;
 	int wavetable_lenth = 1024;
@@ -23,7 +23,7 @@ public:
 	float freq_to_ramp(float x);
 
 	// Triangle wavetable
-	float wavetable_unsafe(float phase);
+	float wavetable(float phase);
 protected:
-
+	float midi_delta_ = 0;
 };

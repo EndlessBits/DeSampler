@@ -13,7 +13,7 @@ DeParams::DeParams(float midi_note0, float midi_note1, float vol0, float vol1)
 	db_delta_ = db1 - db0;
 	float amp0 = db_to_amp_raw(db0);	
 	float amp1 = db_to_amp_raw(db1);
-	db_k_ = 1.0/(amp1-amp0);			// mapping v in [amp0, amp1] -> k*v + a in [0,1]
+	db_k_ = 1.0f/(amp1-amp0);			// mapping v in [amp0, amp1] -> k*v + a in [0,1]
 	db_a_ = -db_k_ * amp0;
 }
 
@@ -28,8 +28,8 @@ inline float DeParams::db_to_amp_raw(float db) {
 }
 
 //--------------------------------------------------------------
-//0..1->0..1
-float DeParams::ramp_to_volume(float x)
+//db to amp, 0..1->0..1
+float DeParams::d2a(float x)
 {
 	x = x * db_delta_ + db0;
 	return db_k_ * db_to_amp_raw(x) + db_a_;		
@@ -40,30 +40,17 @@ float DeParams::ramp_to_volume(float x)
 // 69 is A, 440Hz, m=0..127
 // m = 12*log2(fm/440 Hz) + 69 and fm = 2^((m-69)/12) * (440 Hz).
 
-//0..1->Hz
-float DeParams::ramp_to_freq(float x)
+// linear to frequency, 0..1->Hz
+float DeParams::l2f(float x)
 {
 	x = x * midi_delta_ + midi_note0;
 	return pow(2, (x - 69.0f) / 12.0f) * 440.0f;
 }
 
 //--------------------------------------------------------------
-float DeParams::volume_to_ramp(float x)
+float DeParams::wave(float phase)
 {
-	de_exception("volume_to_ramp - not implemented");
-	return 0;
-}
-
-//--------------------------------------------------------------
-float DeParams::freq_to_ramp(float x)
-{
-	de_exception("freq_to_ramp - not implemented");
-	return 0;
-}
-
-//--------------------------------------------------------------
-float DeParams::wavetable(float phase)
-{
+	de_exception("wave - not implemented");
 	return 0;// waveforms_[int(shape)].value_unsafe(phase);
 }
 

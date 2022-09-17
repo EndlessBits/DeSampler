@@ -2,10 +2,43 @@
 
 #include "ofMain.h"
 #include "DeTypesAssert.h"
+#include "DeParams.h"
+
+/*
+X - Треугольная волна
+
+7 генераторов:
+X2\
+  X1
+X3/  \
+     X0
+X5\  /
+  X4
+X6/
+
+
+A0*wave(t*(F0
+           + A1*wave(t*(F1 + A2*wave(t*F2) + A3*wave(t*F3)))
+           + A4*wave(t*(F4 + A5*wave(t*F5) + A6*wave(t*F6)))
+           ))
+
+Fi - частоты, Ai - амплитуды, меняются по времени как энвелопы,
+от 0 до 1 - и громкость и частота, оба логарифмические.
+
+Точки энвелопы вначале идут часто, потом медленно.
+
+wave начинается с 1, треугольная.
+
+
+*/
+
 
 class DeFmSynth {
 public:
-
+    static const int n = 7;
+    // Генерация сэмпла звука, -1..1,
+    // A, F - массивы амплитуд и частот в диапазоне 0..1
+    float get_sample(float t, float* A, float* F, DeParams *p);
 
 };
 

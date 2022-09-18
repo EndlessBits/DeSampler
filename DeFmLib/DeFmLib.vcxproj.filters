@@ -211,6 +211,9 @@
     <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp">
       <Filter>src\DeFmSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeEditGraph.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -579,6 +582,9 @@
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
     <ClInclude Include="src\DeFmLib\DeEnvelopes.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeEditGraph.h">
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
   </ItemGroup>

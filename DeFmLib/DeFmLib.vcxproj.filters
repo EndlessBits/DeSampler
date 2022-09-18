@@ -205,6 +205,12 @@
     <ClCompile Include="src\DeFmLib\DeParams.cpp">
       <Filter>src\DeFmSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeEnvelope.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -567,6 +573,12 @@
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
     <ClInclude Include="src\DeFmLib\DeParams.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeEnvelope.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeEnvelopes.h">
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
   </ItemGroup>

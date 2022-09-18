@@ -48,10 +48,14 @@ float DeParams::l2f(float x)
 }
 
 //--------------------------------------------------------------
+// Треугольная волна
+// phase 0..1
 float DeParams::wave(float phase)
 {
-	de_exception("wave - not implemented");
-	return 0;// waveforms_[int(shape)].value_unsafe(phase);
+	phase = phase * 4.0f - 2.0f;	// -2..2
+	return ((phase>=0) ? 1:-1)    // sign
+		   * (1.0f - fabs(fabs(phase) - 1.0f));   //fabs(phase) 0..2
 }
+
 
 //--------------------------------------------------------------

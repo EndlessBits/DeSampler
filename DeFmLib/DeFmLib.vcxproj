@@ -188,6 +188,8 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\DeFmLib\DeEnvelope.cpp" />
+    <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp" />
     <ClCompile Include="src\DeFmLib\DeFmSynth.cpp" />
     <ClCompile Include="src\DeFmLib\DeParams.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -258,6 +260,8 @@
     <ClCompile Include="..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src\ofxWindows.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\DeFmLib\DeEnvelope.h" />
+    <ClInclude Include="src\DeFmLib\DeEnvelopes.h" />
     <ClInclude Include="src\DeFmLib\DeFmSynth.h" />
     <ClInclude Include="src\DeFmLib\DeParams.h" />
     <ClInclude Include="src\DeFmLib\DeTypesAssert.h" />

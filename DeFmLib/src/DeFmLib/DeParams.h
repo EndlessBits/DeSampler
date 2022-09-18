@@ -15,7 +15,8 @@ public:
 	/// linear to frequency, 0..1->Hz
 	float l2f(float x);	
 
-	// Triangle wave
+	// Треугольная волна
+	// phase 0..1
 	float wave(float phase);
 protected:
 	// Ranges

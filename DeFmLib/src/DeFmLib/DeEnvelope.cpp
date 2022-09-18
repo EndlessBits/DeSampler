@@ -46,12 +46,23 @@ vector<float>& DeEnvelope::values() {
 }
 
 //--------------------------------------------------------------
+const vector<float>& DeEnvelope::times() const {
+	return times_;
+}
+
+//--------------------------------------------------------------
+const vector<float>& DeEnvelope::values() const {
+	return values_;
+}
+
+//--------------------------------------------------------------
 string DeEnvelope::save_to_string() {
 	string s;
 	for (int i = 0; i < size_; i++) {
 		if (i > 0) s += " ";
 		s += ofToString(times_[i], 4) + " " + ofToString(values_[i], 4);
 	}
+	return s;
 }
 
 //--------------------------------------------------------------

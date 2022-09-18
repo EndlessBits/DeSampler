@@ -12,7 +12,7 @@ public:
 	void save_to_file(const string &file_name);
 	void load_from_file(const string& file_name);
 
-	vector<DeEnvelope> Phases;
+	vector<DeEnvelope> Phases;	// values() хранят начальные фазы для каждого оператора синтезатора
 	vector<DeEnvelope> Amps;
 	vector<DeEnvelope> Freqs;
 protected:

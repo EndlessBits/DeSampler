@@ -37,7 +37,7 @@ wave треугольная.
 class DeFmSynth {
 public:
     void setup(DeParams* p);
-    vector<float> synth(float duration_ms, int sample_rate);
+    vector<float> synth(float duration_ms, int sample_rate, DeEnvelopes& envelopes);
 
 protected:
 
@@ -46,7 +46,7 @@ protected:
 
     DeParams* p_ = nullptr;
 
-    static const int n = 7;
+    static const int n_ops = 7; // число операторов в синтезаторе
     // Генерация сэмпла звука, -1..1,
     // Phase - массив текущих фаз
     // A, F - массивы амплитуд и частот в диапазоне 0..1

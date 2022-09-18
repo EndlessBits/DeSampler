@@ -23,6 +23,8 @@ public:
 	int size();
 	vector<float>& times();
 	vector<float>& values();
+	const vector<float>& times() const;
+	const vector<float>& values() const;
 
 	/// Начать последовательное считывание значений, количеством duration_samples
 	void sampling_begin(int duration_samples);

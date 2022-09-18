@@ -4,30 +4,31 @@
 void DeEnvelope::setup(const string& title, const DeEnvelopeParams& params) {
 	de_assert(params.size >= 2, "DeEnvelope::setup - bad size");
 	size_ = params.size;
-	times_.resize(size_);
+	times_ = generate_times(params);
 	values_.resize(size_);
+}
+
+//--------------------------------------------------------------
+/*static*/ vector<float> DeEnvelope::generate_times(const DeEnvelopeParams& params) {
+	de_assert(params.size >= 2, "DeEnvelope::generate_times - bad size");
+	int size = params.size;
+	vector<float> times(size);
 	switch (params.type) {
-	case DeEnvelopeType::Equidistant: init_equidistant(); break;
-	case DeEnvelopeType::SlowingDown: init_slowingdown(); break;
+	case DeEnvelopeType::Equidistant: 
+		for (int i = 0; i < size; i++) {
+			times[i] = float(i) / (size - 1);
+		}
+		break;
+	case DeEnvelopeType::SlowingDown: 
+		for (int i = 0; i < size; i++) {
+			float x = float(i) / (size - 1);
+			times[i] = x * x;
+		}
+		break;
 	default:
-		de_exception("DeEnvelope::setup - bad type");
+		de_exception("DeEnvelope::generate_times - bad type");
 	}
-
-}
-
-//--------------------------------------------------------------
-void DeEnvelope::init_equidistant() {
-	for (int i = 0; i < size_; i++) {
-		times_[i] = float(i) / (size_ - 1);
-	}
-}
-
-//--------------------------------------------------------------
-void DeEnvelope::init_slowingdown() {
-	for (int i = 0; i < size_; i++) {
-		float x = float(i) / (size_ - 1);
-		times_[i] = x * x;
-	}
+	return times;
 }
 
 //--------------------------------------------------------------

@@ -8,14 +8,13 @@
 // Набор огибающих для синтезатора
 class DeEnvelopes {
 public:
-	void setup(const DeEnvelopeParams& params, DeParams *p);
+	void setup(int n_ops, const DeEnvelopeParams& params);
 	void save_to_file(const string &file_name);
 	void load_from_file(const string& file_name);
 
-	vector<DeEnvelope> Phases;	// values() хранят начальные фазы для каждого оператора синтезатора
-	vector<DeEnvelope> Amps;
-	vector<DeEnvelope> Freqs;
+	vector<float> Phases;	  // Начальные фазы
+	vector<DeEnvelope> Amps;  // Амплитуды
+	vector<DeEnvelope> Freqs; // Частоты
 protected:
-	DeParams* p_ = 0;
 
 };

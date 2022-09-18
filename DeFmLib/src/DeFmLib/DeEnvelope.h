@@ -16,6 +16,8 @@ struct DeEnvelopeParams {
 // Огибающая с диапазоном и значениями от 0 до 1
 class DeEnvelope {
 public:
+	static vector<float> generate_times(const DeEnvelopeParams& params);
+
 	void setup(const string& title, const DeEnvelopeParams &params);
 	string save_to_string();
 	void load_from_string(const string& line);
@@ -35,9 +37,6 @@ protected:
 	int size_ = 0;
 	vector<float> times_;
 	vector<float> values_;
-
-	void init_equidistant();
-	void init_slowingdown();
 
 	// Семплинг
 	int samples_ = 0;

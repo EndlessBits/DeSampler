@@ -20,7 +20,7 @@ vector<float> DeFmSynth::synth(float duration_ms, int sample_rate, DeEnvelopes& 
     float F[n_ops] = { 0 };
     // Устанавливаем начальные фазы и стартуем считывание огибающих
     for (int k = 0; k < n_ops; k++) {
-        Phase[k] = envelopes.Phases[k].values()[k];
+        Phase[k] = envelopes.Phases[k];
         envelopes.Amps[k].sampling_begin(duration_samples);
         envelopes.Freqs[k].sampling_begin(duration_samples);
     }

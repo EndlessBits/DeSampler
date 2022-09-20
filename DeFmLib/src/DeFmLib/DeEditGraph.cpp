@@ -32,23 +32,23 @@ void DeEditGraph::draw() {
 }
 
 //--------------------------------------------------------------
-void DeEditGraph::mouse_moved(int x, int y) {
+void DeEditGraph::mouse_moved(const glm::vec2 &pos) {
 
 }
 
 //--------------------------------------------------------------
-bool DeEditGraph::mouse_pressed(int x, int y) {
+bool DeEditGraph::mouse_pressed(const glm::vec2& pos) {
 
 	return false;	// TODO
 }
 
 //--------------------------------------------------------------
-void DeEditGraph::mouse_dragged(int x, int y) {
+void DeEditGraph::mouse_dragged(const glm::vec2& pos) {
 
 }
 
 //--------------------------------------------------------------
-void DeEditGraph::mouse_released(int x, int y) {
+void DeEditGraph::mouse_released(const glm::vec2& pos) {
 
 }
 

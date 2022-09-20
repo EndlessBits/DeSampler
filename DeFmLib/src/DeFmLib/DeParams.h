@@ -3,11 +3,12 @@
 #include "ofMain.h"
 #include "DeTypesAssert.h"
 
-// FM synth shared params between fragments and operators
+// Параметры конвертации 0..1 в амплидуту и частоту
+
 class DeParams {
 public:
 	DeParams() {}
-	DeParams(float midi_note0, float midi_note1, float db0, float db1);
+	void setup(float midi_note0, float midi_note1, float db0, float db1);
 
 	// Conversions
 	/// db to amp, 0..1->0..1

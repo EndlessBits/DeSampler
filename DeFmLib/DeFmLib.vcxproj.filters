@@ -214,6 +214,9 @@
     <ClCompile Include="src\DeFmLib\DeEditGraph.cpp">
       <Filter>src\DeFmSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\DeFmLib\DeEditor.cpp">
+      <Filter>src\DeFmSynth</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -585,6 +588,9 @@
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
     <ClInclude Include="src\DeFmLib\DeEditGraph.h">
+      <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmLib\DeEditor.h">
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
   </ItemGroup>

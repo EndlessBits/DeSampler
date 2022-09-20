@@ -2,7 +2,7 @@
 
 
 //--------------------------------------------------------------
-DeParams::DeParams(float midi_note0, float midi_note1, float vol0, float vol1)
+void DeParams::setup(float midi_note0, float midi_note1, float vol0, float vol1)
 {
 	this->midi_note0 = midi_note0;
 	this->midi_note1 = midi_note1;

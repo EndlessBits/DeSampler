@@ -189,6 +189,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\DeFmLib\DeEditGraph.cpp" />
+    <ClCompile Include="src\DeFmLib\DeEditor.cpp" />
     <ClCompile Include="src\DeFmLib\DeEnvelope.cpp" />
     <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp" />
     <ClCompile Include="src\DeFmLib\DeFmSynth.cpp" />
@@ -262,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\DeFmLib\DeEditGraph.h" />
+    <ClInclude Include="src\DeFmLib\DeEditor.h" />
     <ClInclude Include="src\DeFmLib\DeEnvelope.h" />
     <ClInclude Include="src\DeFmLib\DeEnvelopes.h" />
     <ClInclude Include="src\DeFmLib\DeFmSynth.h" />

@@ -6,7 +6,7 @@ void DeFmSynth::setup(DeParams* p) {
 }
 
 //--------------------------------------------------------------
-vector<float> DeFmSynth::synth(float duration_ms, int sample_rate, DeEnvelopes& envelopes) {
+vector<float> DeFmSynth::synth(float duration_ms, int sample_rate, DeEnvelopes* envelopes) {
     de_assert(p_, "DeFmSynth::synth - please call setup()");
     de_assert(sample_rate > 0, "DeFmSynth::synth - bad sample_rate");
     de_assert(duration_ms > 0, "DeFmSynth::synth - bad duration_ms");
@@ -20,17 +20,17 @@ vector<float> DeFmSynth::synth(float duration_ms, int sample_rate, DeEnvelopes& 
     float F[n_ops] = { 0 };
     // Устанавливаем начальные фазы и стартуем считывание огибающих
     for (int k = 0; k < n_ops; k++) {
-        Phase[k] = envelopes.Phases[k];
-        envelopes.Amps[k].sampling_begin(duration_samples);
-        envelopes.Freqs[k].sampling_begin(duration_samples);
+        Phase[k] = envelopes->Phases[k];
+        envelopes->Amps[k].sampling_begin(duration_samples);
+        envelopes->Freqs[k].sampling_begin(duration_samples);
     }
     
     vector<float> sound(duration_samples);
     for (int i = 0; i < duration_samples; i++) {
         // считываем огибающие
         for (int k = 0; k < n_ops; k++) {
-            A[k] = envelopes.Amps[k].sampling_next_value();
-            F[k] = envelopes.Freqs[k].sampling_next_value();
+            A[k] = envelopes->Amps[k].sampling_next_value();
+            F[k] = envelopes->Freqs[k].sampling_next_value();
         }
         sound[i] = get_sample(Phase, A, F);
     }

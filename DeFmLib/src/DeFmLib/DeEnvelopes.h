@@ -5,7 +5,8 @@
 #include "DeParams.h"
 #include "DeEnvelope.h"
 
-// Набор огибающих для синтезатора
+// Огибающие синтезатора
+
 class DeEnvelopes {
 public:
 	void setup(int n_ops, const DeEnvelopeParams& params);

@@ -5,7 +5,7 @@
 #include "DeParams.h"
 #include "DeEnvelope.h"
 
-// Редактор графиков - может применяться для редактирования огибающих, а также начальных фаз
+// Редактор одного графика - может применяться для редактирования огибающих, а также начальных фаз
 class DeEditGraph {
 public:
 	void setup_view(const string& title, ofRectangle rect);	// rect 0..1
@@ -13,10 +13,10 @@ public:
 	void setup_data(vector<float>* values);	// times ставятся равномерно
 
 	void draw();
-	void mouse_moved(int x, int y);
-	bool mouse_pressed(int x, int y);
-	void mouse_dragged(int x, int y);
-	void mouse_released(int x, int y);
+	void mouse_moved(const glm::vec2& pos);  // x,y 0..1
+	bool mouse_pressed(const glm::vec2& pos);
+	void mouse_dragged(const glm::vec2& pos);
+	void mouse_released(const glm::vec2& pos);
 protected:
 	string title_;
 	ofRectangle rect_;

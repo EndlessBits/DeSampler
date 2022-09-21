@@ -11,7 +11,7 @@
 class DeEditor {
 public:
 	void setup(DeEnvelopes* envelopes);
-	void draw(ofRectangle rect);
+	void draw(ofRectangle rect_pix);
 	void mouse_moved(int x, int y);
 	bool mouse_pressed(int x, int y);
 	void mouse_dragged(int x, int y);
@@ -21,7 +21,7 @@ public:
 	void load_from_file(const string& file_name);
 protected:
 	DeEnvelopes* envelopes_ = nullptr;
-	ofRectangle rect_;		// Прямоугольник для последнего рисования, используется для вычислений с мышью
+	ofRectangle rect_pix_;		// Прямоугольник для последнего рисования, используется для вычислений с мышью
 
 	vector<DeEditGraph> editors_;
 	DeEditGraph* editor_ = nullptr;	// Текущий редактируемый график

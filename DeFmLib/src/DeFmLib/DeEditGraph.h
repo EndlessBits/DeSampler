@@ -12,7 +12,7 @@ public:
 	void setup_data(const vector<float>* times, vector<float>* values);
 	void setup_data(vector<float>* values);	// times ставятся равномерно
 
-	void draw();
+	void draw(const ofRectangle &global_rect_pix);
 	void mouse_moved(const glm::vec2& pos);  // x,y 0..1
 	bool mouse_pressed(const glm::vec2& pos);
 	void mouse_dragged(const glm::vec2& pos);
@@ -20,6 +20,8 @@ public:
 protected:
 	string title_;
 	ofRectangle rect_;
+
+	ofRectangle rect_pix_;	// Выставляется при каждом кадре рисования
 
 	vector<float> times_internal_;	// для случая когда заданы только values
 	const vector<float>* ptimes_ = nullptr;

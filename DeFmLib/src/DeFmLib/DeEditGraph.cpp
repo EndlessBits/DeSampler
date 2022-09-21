@@ -27,8 +27,16 @@ void DeEditGraph::setup_data(vector<float>* values) {
 }
 
 //--------------------------------------------------------------
-void DeEditGraph::draw() {
+void DeEditGraph::draw(const ofRectangle& global_rect_pix) {
+	auto& glob = global_rect_pix;
+	rect_pix_.x = ofLerp(glob.x, glob.getRight(), rect_.x);
+	rect_pix_.y = ofLerp(glob.y, glob.getRight(), rect_.y);
+	rect_pix_.width = ofLerp(0, glob.width, rect_.width);
+	rect_pix_.height = ofLerp(0, glob.height, rect_.height);
 
+	ofSetColor(255);
+	ofNoFill();
+	ofDrawRectangle(rect_pix_);
 }
 
 //--------------------------------------------------------------

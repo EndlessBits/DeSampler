@@ -8,6 +8,8 @@ void ofApp::setup(){
 	cout << "--------------------------------------------------" << endl;
 	ofSetWindowTitle(title);
 
+	ofBackground(32);
+
 	// Параметры конверсии
 	float midi_note0 = 21;
 	float midi_note1 = 108;

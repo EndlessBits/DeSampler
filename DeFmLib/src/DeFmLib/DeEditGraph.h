@@ -5,25 +5,47 @@
 #include "DeParams.h"
 #include "DeEnvelope.h"
 
+// “ип отображени€ графика
+enum class DeEditGraphViewType {
+	Lines = 0,
+	Bars = 1
+};
+
 // –едактор одного графика - может примен€тьс€ дл€ редактировани€ огибающих, а также начальных фаз
 class DeEditGraph {
 public:
-	void setup_view(const string& title, ofRectangle rect);	// rect 0..1
+	void setup_view(const string& title, DeEditGraphViewType view_type, ofRectangle rect);	// rect 0..1
 	void setup_data(const vector<float>* times, vector<float>* values);
-	void setup_data(vector<float>* values);	// times став€тс€ равномерно
+	void setup_data(DeEditGraphViewType time_view_type, vector<float>* values);	// times став€тс€ равномерно в зависимости от типа
 
 	void draw(const ofRectangle &global_rect_pix);
-	void mouse_moved(const glm::vec2& pos);  // x,y 0..1
-	bool mouse_pressed(const glm::vec2& pos);
-	void mouse_dragged(const glm::vec2& pos);
-	void mouse_released(const glm::vec2& pos);
+	void mouse_moved(const glm::vec2& pos_pix);  
+	bool mouse_pressed(const glm::vec2& pos_pix);
+	void mouse_dragged(const glm::vec2& pos_pix);
+	void mouse_released(const glm::vec2& pos_pix);
 protected:
+	static const int mouse_rad_pix = 5;
+
 	string title_;
+	DeEditGraphViewType view_type_;
 	ofRectangle rect_;
 
 	ofRectangle rect_pix_;	// ¬ыставл€етс€ при каждом кадре рисовани€
 
-	vector<float> times_internal_;	// дл€ случа€ когда заданы только values
+	vector<float> times_internal_;	// дл€ случа€ когда заданы только values, не используетс€ при Bars
 	const vector<float>* ptimes_ = nullptr;
 	vector<float>* pvalues_ = nullptr;
+	int n_ = 0;
+
+	// –едактируема€ точка
+	int edit_index_ = -1;
+	glm::vec2 edit_pos_;
+
+	glm::vec2 internal_to_pix(const glm::vec2 &p);
+		
+	//  оординаты точки
+	glm::vec2 point_pix(int i);
+
+	// ќбласть распознавани€ дл€ мыши
+	ofRectangle mouse_rect_pix(int i);
 };

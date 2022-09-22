@@ -25,6 +25,11 @@ void DeEnvelope::setup(const string& title, const DeEnvelopeParams& params) {
 			times[i] = x * x;
 		}
 		break;
+	case DeEnvelopeType::EquidistantBars:
+		for (int i = 0; i < size; i++) {
+			times[i] = float(i+0.5) / size;
+		}
+		break;
 	default:
 		de_exception("DeEnvelope::generate_times - bad type");
 	}

@@ -27,4 +27,6 @@ protected:
 	DeEditGraph* editor_ = nullptr;	// Текущий редактируемый график
 
 	glm::vec2 screen_to_uniform(float x, float y);
+
+	
 };

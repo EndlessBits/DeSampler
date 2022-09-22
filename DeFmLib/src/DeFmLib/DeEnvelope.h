@@ -5,7 +5,8 @@
 
 enum class DeEnvelopeType : int {
 	Equidistant = 0,
-	SlowingDown = 1
+	SlowingDown = 1,
+	EquidistantBars = 2	// Используется для bar-графиков
 };
 
 struct DeEnvelopeParams {

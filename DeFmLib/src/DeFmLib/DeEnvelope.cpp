@@ -25,7 +25,7 @@ void DeEnvelope::setup(const string& title, const DeEnvelopeParams& params) {
 			times[i] = x * x;
 		}
 		break;
-	case DeEnvelopeType::EquidistantBars:
+	case DeEnvelopeType::EquidistantPins:
 		for (int i = 0; i < size; i++) {
 			times[i] = float(i+0.5) / size;
 		}

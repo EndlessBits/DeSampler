@@ -23,11 +23,11 @@ void DeEditGraph::setup_data(DeEditGraphViewType time_view_type, vector<float>* 
 	DeEnvelopeParams params;
 	params.size = values->size();
 	switch (time_view_type) {
-	case DeEditGraphViewType::Lines: 
+	case DeEditGraphViewType::Lines:
 		params.type = DeEnvelopeType::Equidistant;
 		break;
-	case DeEditGraphViewType::Bars:
-		params.type = DeEnvelopeType::EquidistantBars;
+	case DeEditGraphViewType::Pins:
+		params.type = DeEnvelopeType::EquidistantPins;
 		break;
 	default: de_exception("DeEditGraph::setup_data - bad time_view_type")
 	}
@@ -42,24 +42,76 @@ void DeEditGraph::setup_data(DeEditGraphViewType time_view_type, vector<float>* 
 void DeEditGraph::draw(const ofRectangle& global_rect_pix) {
 	auto& glob = global_rect_pix;
 	rect_pix_.x = ofLerp(glob.x, glob.getRight(), rect_.x);
-	rect_pix_.y = ofLerp(glob.y, glob.getRight(), rect_.y);
+	rect_pix_.y = ofLerp(glob.y, glob.getBottom(), rect_.y);
 	rect_pix_.width = ofLerp(0, glob.width, rect_.width);
 	rect_pix_.height = ofLerp(0, glob.height, rect_.height);
 
-	ofSetColor(255);
+	ofSetColor(160);
 	ofNoFill();
 	ofDrawRectangle(rect_pix_);
+
+	ofSetColor(255);
+	switch (view_type_) {
+	case DeEditGraphViewType::Lines:
+	{
+		auto last_point = point_pix(0);
+		for (int i = 1; i < n_; i++) {
+			auto point = point_pix(i);
+			ofDrawLine(last_point, point);
+			last_point = point;
+		}
+		break;
+	}
+	case DeEditGraphViewType::Pins:
+	{
+		for (int i = 0; i < n_; i++) {
+			auto point = point_pix(i);
+			ofDrawLine(internal_to_pix(glm::vec2((*ptimes_)[i], 0)), point);
+		}
+		break;
+	}
+
+	default:
+		de_exception("DeEditGraph::draw - bad view_type");		
+	}
+
+	//Точки
+	for (int i = 0; i < n_; i++) {
+		if (i != mouse_over_index_) {
+			ofDrawCircle(point_pix(i), 3);
+			//	ofDrawRectangle(mouse_rect_pix(i));
+		}
+	}
+	if (mouse_over_index_ >= 0) {
+		ofSetColor(255, 255, 0);
+		ofDrawCircle(point_pix(mouse_over_index_), 5);
+	}
+
+
 }
 
 //--------------------------------------------------------------
-void DeEditGraph::mouse_moved(const glm::vec2& pos_pix) {
-
+void DeEditGraph::mouse_moved(const glm::vec2& pos_pix, bool editing) {
+	mouse_over_index_ = -1;
+	if (editing) {
+		return;
+	}
+	for (int i = 0; i < n_; i++) {
+		if (mouse_rect_pix(i).inside(pos_pix)) {
+			mouse_over_index_ = i;
+		}
+	}
 }
 
 //--------------------------------------------------------------
 glm::vec2 DeEditGraph::internal_to_pix(const glm::vec2& p) {
-	return glm::vec2(rect_pix_.x + p.x * rect_pix_.width,
-		rect_pix_.y + p.y * rect_pix_.height);
+	return glm::vec2(int(rect_pix_.x + p.x * rect_pix_.width),
+		rect_pix_.y + (1 - p.y) * rect_pix_.height);
+}
+
+//--------------------------------------------------------------
+float DeEditGraph::pix_to_internal(float y) {
+	return 1 - (y - rect_pix_.y) / rect_pix_.height;
 }
 
 //--------------------------------------------------------------
@@ -77,7 +129,7 @@ ofRectangle DeEditGraph::mouse_rect_pix(int i) {
 	case DeEditGraphViewType::Lines:
 		return ofRectangle(p.x - mouse_rad_pix, p.y - mouse_rad_pix,
 			2 * mouse_rad_pix + 1, 2 * mouse_rad_pix + 1);
-	case DeEditGraphViewType::Bars:
+	case DeEditGraphViewType::Pins:
 		return ofRectangle(p.x - mouse_rad_pix, p.y - mouse_rad_pix,
 			2 * mouse_rad_pix + 1, 2 * mouse_rad_pix + 1);
 	default:
@@ -91,17 +143,17 @@ bool DeEditGraph::mouse_pressed(const glm::vec2& pos_pix) {
 	for (int i = 0; i < n_; i++) {
 		if (mouse_rect_pix(i).inside(pos_pix)) {
 			edit_index_ = i;
-			edit_pos_ = pos_pix;
+			edit_delta_y_ = (*pvalues_)[edit_index_] - pix_to_internal(pos_pix.y);
 			return true;
 		}
 	}
-	return false;	
+	return false;
 }
 
 //--------------------------------------------------------------
 void DeEditGraph::mouse_dragged(const glm::vec2& pos_pix) {
 	if (edit_index_ >= 0) {
-		// TODO
+		(*pvalues_)[edit_index_] = ofClamp(edit_delta_y_ + pix_to_internal(pos_pix.y), 0, 1);
 	}
 }
 

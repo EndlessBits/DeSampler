@@ -10,19 +10,19 @@ void DeEditor::setup(DeEnvelopes* envelopes) {
 	int k = 0;
 	for (int i = 0; i < n + 1; i++) {
 		if (i == 0) {
-			editors_[k].setup_data(DeEditGraphViewType::Bars, &envelopes_->Phases);
-			editors_[k].setup_view("Phases", DeEditGraphViewType::Bars, ofRectangle(0.05, 0.05, 0.1, 0.1));
+			editors_[k].setup_data(DeEditGraphViewType::Pins, &envelopes_->Phases);
+			editors_[k].setup_view("Phases", DeEditGraphViewType::Pins, ofRectangle(0.05, 0.05, 0.1, 0.1));
 			k++;
 		}
 		else {
 			int j = i - 1;
 			string num = ofToString(j + 1);
 			editors_[k].setup_data(&envelopes_->Freqs[j].times(), &envelopes_->Freqs[j].values());
-			editors_[k].setup_view("Freq " + num, DeEditGraphViewType::Lines, ofRectangle(0.15 + 0.1*j, 0.15, 0.1, 0.1));
+			editors_[k].setup_view("Freq " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.20, 0.1, 0.1));
 			k++;
 
 			editors_[k].setup_data(&envelopes_->Amps[j].times(), &envelopes_->Amps[j].values());
-			editors_[k].setup_view("Amp " + num, DeEditGraphViewType::Lines, ofRectangle(0.15 + 0.1 * j, 0.25, 0.1, 0.1));
+			editors_[k].setup_view("Amp " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.35, 0.1, 0.1));
 			k++;
 		}
 	}
@@ -55,7 +55,11 @@ glm::vec2 DeEditor::screen_to_uniform(float x, float y)
 
 //--------------------------------------------------------------
 void DeEditor::mouse_moved(int x, int y) {
-
+	auto pos_pix = glm::vec2(x, y);
+	bool editing = (editor_);
+	for (auto& editor : editors_) {
+		editor.mouse_moved(pos_pix, editing);
+	}
 }
 
 //--------------------------------------------------------------

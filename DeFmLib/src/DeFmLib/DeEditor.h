@@ -17,8 +17,6 @@ public:
 	void mouse_dragged(int x, int y);
 	void mouse_released(int x, int y);
 
-	void save_to_file(const string& file_name);
-	void load_from_file(const string& file_name);
 protected:
 	DeEnvelopes* envelopes_ = nullptr;
 	ofRectangle rect_pix_;		// ѕр€моугольник дл€ последнего рисовани€, используетс€ дл€ вычислений с мышью

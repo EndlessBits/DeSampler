@@ -29,16 +29,6 @@ void DeEditor::setup(DeEnvelopes* envelopes) {
 }
 
 //--------------------------------------------------------------
-void DeEditor::save_to_file(const string& file_name) {
-
-}
-
-//--------------------------------------------------------------
-void DeEditor::load_from_file(const string& file_name) {
-
-}
-
-//--------------------------------------------------------------
 void DeEditor::draw(ofRectangle rect_pix) {
 	rect_pix_ = rect_pix;
 	for (auto& editor : editors_) {
@@ -46,7 +36,7 @@ void DeEditor::draw(ofRectangle rect_pix) {
 	}
 }
 
-
+//--------------------------------------------------------------
 glm::vec2 DeEditor::screen_to_uniform(float x, float y)
 {
 	return 	glm::vec2(ofMap(x, rect_pix_.x, rect_pix_.getRight(), 0, 1),

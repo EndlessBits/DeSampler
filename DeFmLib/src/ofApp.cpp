@@ -4,7 +4,8 @@
 void ofApp::setup(){
 	string title = "DeFmLib";
 	cout << "--------------------------------------------------" << endl;
-	cout << title;
+	cout << title << endl;
+	cout << "1..9 - load preset, Shift+1..9 - save preset" << endl;
 	cout << "--------------------------------------------------" << endl;
 	ofSetWindowTitle(title);
 
@@ -44,6 +45,10 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+	if (key >= '1' && key <= '9') {
+		string file_name = "preset" + ofToString(int(key - '1') + 1) + ".fm";
+		envelopes_.save_to_file(file_name);
+	}
 
 }
 

@@ -11,18 +11,18 @@ void DeEditor::setup(DeEnvelopes* envelopes) {
 	for (int i = 0; i < n + 1; i++) {
 		if (i == 0) {
 			editors_[k].setup_data(DeEditGraphViewType::Pins, &envelopes_->Phases);
-			editors_[k].setup_view("Phases", DeEditGraphViewType::Pins, ofRectangle(0.05, 0.05, 0.1, 0.1));
+			editors_[k].setup_view("Phases", DeEditGraphViewType::Pins, ofRectangle(0.05, 0.05, 0.82, 0.1));
 			k++;
 		}
 		else {
 			int j = i - 1;
 			string num = ofToString(j + 1);
 			editors_[k].setup_data(&envelopes_->Freqs[j].times(), &envelopes_->Freqs[j].values());
-			editors_[k].setup_view("Freq " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.20, 0.1, 0.1));
+			editors_[k].setup_view("Freq " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.20, 0.1, 0.3));
 			k++;
 
 			editors_[k].setup_data(&envelopes_->Amps[j].times(), &envelopes_->Amps[j].values());
-			editors_[k].setup_view("Amp " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.35, 0.1, 0.1));
+			editors_[k].setup_view("Amp " + num, DeEditGraphViewType::Lines, ofRectangle(0.05 + 0.12 * j, 0.55, 0.1, 0.2));
 			k++;
 		}
 	}

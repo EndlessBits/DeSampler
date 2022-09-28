@@ -149,7 +149,12 @@ bool DeEditGraph::mouse_pressed(const glm::vec2& pos_pix) {
 		}
 	}
 	// Проверка, что кликнули в прямоугольник, чтобы рисовать график
-	if (rect_pix_.inside(pos_pix)) {
+	auto rect = rect_pix_;
+	rect.x -= mouse_rad_pix;
+	rect.y -= mouse_rad_pix;
+	rect.width += 2 * mouse_rad_pix;
+	rect.height += 2 * mouse_rad_pix;
+	if (rect.inside(pos_pix)) {
 		edit_by_drawing_ = true;
 		mouse_dragged(pos_pix);
 		return true;

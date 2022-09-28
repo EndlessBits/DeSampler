@@ -31,4 +31,6 @@ public:
 	DeEditor editor_;			// Редактор огибающих
 	DeFmSynth synth_;			// Синтезатор, для синтеза использует параметры и огибающие
 
+	void load_preset(int i);
+	void save_preset(int i);
 };

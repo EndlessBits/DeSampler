@@ -32,6 +32,18 @@ void ofApp::setup(){
 }
 
 //--------------------------------------------------------------
+void ofApp::load_preset(int i) {
+	string file_name = "preset" + ofToString(i + 1) + ".fm";
+	envelopes_.load_from_file(file_name);
+}
+
+//--------------------------------------------------------------
+void ofApp::save_preset(int i) {
+	string file_name = "preset" + ofToString(i + 1) + ".fm";
+	envelopes_.save_to_file(file_name);
+}
+
+//--------------------------------------------------------------
 void ofApp::update(){
 
 }
@@ -46,9 +58,17 @@ void ofApp::draw(){
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
 	if (key >= '1' && key <= '9') {
-		string file_name = "preset" + ofToString(int(key - '1') + 1) + ".fm";
-		envelopes_.save_to_file(file_name);
+		load_preset(int(key - '1'));
 	}
+	if (key == '!') save_preset(0);
+	if (key == '@') save_preset(1);
+	if (key == '#') save_preset(2);
+	if (key == '$') save_preset(3);
+	if (key == '%') save_preset(4);
+	if (key == '^') save_preset(5);
+	if (key == '&') save_preset(6);
+	if (key == '*') save_preset(7);
+	if (key == '(') save_preset(8);
 
 }
 

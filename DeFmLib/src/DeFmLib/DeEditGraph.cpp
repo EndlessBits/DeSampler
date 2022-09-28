@@ -140,6 +140,7 @@ ofRectangle DeEditGraph::mouse_rect_pix(int i) {
 
 //--------------------------------------------------------------
 bool DeEditGraph::mouse_pressed(const glm::vec2& pos_pix) {
+	// Если кликнули в точку - то редактируем ее, иначе - "рисуем" график
 	for (int i = 0; i < n_; i++) {
 		if (mouse_rect_pix(i).inside(pos_pix)) {
 			edit_index_ = i;
@@ -147,6 +148,13 @@ bool DeEditGraph::mouse_pressed(const glm::vec2& pos_pix) {
 			return true;
 		}
 	}
+	// Проверка, что кликнули в прямоугольник, чтобы рисовать график
+	if (rect_pix_.inside(pos_pix)) {
+		edit_by_drawing_ = true;
+		mouse_dragged(pos_pix);
+		return true;
+	}
+
 	return false;
 }
 
@@ -154,15 +162,24 @@ bool DeEditGraph::mouse_pressed(const glm::vec2& pos_pix) {
 void DeEditGraph::mouse_dragged(const glm::vec2& pos_pix) {
 	if (edit_index_ >= 0) {
 		(*pvalues_)[edit_index_] = ofClamp(edit_delta_y_ + pix_to_internal(pos_pix.y), 0, 1);
+		return;
+	}
+	if (edit_by_drawing_) {
+		for (int i = 0; i < n_; i++) {
+			auto rect = mouse_rect_pix(i);
+			if (ofInRange(pos_pix.x, rect.x, rect.getRight())) {
+				(*pvalues_)[i] = ofClamp(pix_to_internal(pos_pix.y), 0, 1);
+				return;
+			}
+		}
 	}
 }
 
 //--------------------------------------------------------------
 void DeEditGraph::mouse_released(const glm::vec2& pos_pix) {
 	mouse_dragged(pos_pix);
-	if (edit_index_ >= 0) {
-		edit_index_ = -1;
-	}
+	edit_index_ = -1;
+	edit_by_drawing_ = false;
 }
 
 //--------------------------------------------------------------

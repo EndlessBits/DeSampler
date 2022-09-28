@@ -26,6 +26,8 @@ public:
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
 
+	string title_;
+
 	DeParams params_;			// Параметры конвертации 0..1 в амплидуту и частоту
 	DeEnvelopes envelopes_;		// Огибающие синтезатора
 	DeEditor editor_;			// Редактор огибающих
@@ -33,4 +35,5 @@ public:
 
 	void load_preset(int i);
 	void save_preset(int i);
+
 };

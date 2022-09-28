@@ -45,6 +45,9 @@ protected:
 	int edit_index_ = -1;
 	float edit_delta_y_ = 0;
 
+	// Редактируем рисованием
+	bool edit_by_drawing_ = false;
+
 	glm::vec2 internal_to_pix(const glm::vec2 &p);
 	float pix_to_internal(float y);	// Используется при редактировании
 		

@@ -2,12 +2,12 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	string title = "DeFmLib";
+	title_ = "DeFmLib";
 	cout << "--------------------------------------------------" << endl;
-	cout << title << endl;
+	cout << title_ << endl;
 	cout << "1..9 - load preset, Shift+1..9 - save preset" << endl;
 	cout << "--------------------------------------------------" << endl;
-	ofSetWindowTitle(title);
+	ofSetWindowTitle(title_);
 
 	ofBackground(32);
 
@@ -35,12 +35,16 @@ void ofApp::setup(){
 void ofApp::load_preset(int i) {
 	string file_name = "preset" + ofToString(i + 1) + ".fm";
 	envelopes_.load_from_file(file_name);
+
+	ofSetWindowTitle(title_ + " - " + file_name);
 }
 
 //--------------------------------------------------------------
 void ofApp::save_preset(int i) {
 	string file_name = "preset" + ofToString(i + 1) + ".fm";
 	envelopes_.save_to_file(file_name);
+
+	ofSetWindowTitle(title_ + " - " + file_name);
 }
 
 //--------------------------------------------------------------

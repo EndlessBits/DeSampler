@@ -1,11 +1,13 @@
 #include "ofApp.h"
 
 //--------------------------------------------------------------
-void ofApp::setup(){
+void ofApp::setup() {
 	title_ = "DeFmLib";
 	cout << "--------------------------------------------------" << endl;
 	cout << title_ << endl;
 	cout << "1..9 - load preset, Shift+1..9 - save preset" << endl;
+	cout << "L, Shift+S - load/save last opened or saved preset" << endl;
+	cout << "Space - play sound" << endl;
 	cout << "--------------------------------------------------" << endl;
 	ofSetWindowTitle(title_);
 
@@ -29,10 +31,17 @@ void ofApp::setup(){
 
 	synth_.setup(&params_);
 
+	// Запуск звука
+	sound_.setup();
+
 }
 
 //--------------------------------------------------------------
 void ofApp::load_preset(int i) {
+	if (i == -1) i = preset_;
+	if (i == -1) return;
+
+	preset_ = i;
 	string file_name = "preset" + ofToString(i + 1) + ".fm";
 	envelopes_.load_from_file(file_name);
 
@@ -41,6 +50,10 @@ void ofApp::load_preset(int i) {
 
 //--------------------------------------------------------------
 void ofApp::save_preset(int i) {
+	if (i == -1) i = preset_;
+	if (i == -1) return;
+
+	preset_ = i;
 	string file_name = "preset" + ofToString(i + 1) + ".fm";
 	envelopes_.save_to_file(file_name);
 
@@ -48,19 +61,32 @@ void ofApp::save_preset(int i) {
 }
 
 //--------------------------------------------------------------
-void ofApp::update(){
+void ofApp::play_sound() {
+	float duration_sec = 2;
+	int sample_rate = 22050;
+	vector<float> mono_sound = synth_.synth(duration_sec, sample_rate, &envelopes_);
+	sound_.set_sound(mono_sound, sample_rate);
+}
+
+//--------------------------------------------------------------
+void ofApp::update() {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::draw(){
+void ofApp::draw() {
+	float W = ofGetWidth();
+	float H = ofGetHeight();
 	// Прямоугольник для рисования редактора - также используется редактором для работы с мышью
-	ofRectangle rect(0, 0, ofGetWidth(), ofGetHeight());
+	ofRectangle rect(0, 0, W, H);
+	ofRectangle sound_rect(0.05 * W, 0.8 * H, 0.82 * W, 0.15 * H);
+
 	editor_.draw(rect);
+	sound_.draw(sound_rect);
 }
 
 //--------------------------------------------------------------
-void ofApp::keyPressed(int key){
+void ofApp::keyPressed(int key) {
 	if (key >= '1' && key <= '9') {
 		load_preset(int(key - '1'));
 	}
@@ -74,54 +100,59 @@ void ofApp::keyPressed(int key){
 	if (key == '*') save_preset(7);
 	if (key == '(') save_preset(8);
 
+	if (key == 'l') load_preset();
+	if (key == 'S') save_preset();
+
+	if (key == ' ') play_sound();
+
 }
 
 //--------------------------------------------------------------
-void ofApp::keyReleased(int key){
+void ofApp::keyReleased(int key) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseMoved(int x, int y ){
+void ofApp::mouseMoved(int x, int y) {
 	editor_.mouse_moved(x, y);
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseDragged(int x, int y, int button){
+void ofApp::mouseDragged(int x, int y, int button) {
 	editor_.mouse_dragged(x, y);
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button) {
 	editor_.mouse_pressed(x, y);
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button) {
 	editor_.mouse_released(x, y);
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
+void ofApp::mouseEntered(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
+void ofApp::mouseExited(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo) {
 
 }

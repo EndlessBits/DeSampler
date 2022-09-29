@@ -38,7 +38,7 @@ wave треугольна€.
 class DeFmSynth {
 public:
     void setup(DeParams* p);
-    vector<float> synth(float duration_ms, int sample_rate, DeEnvelopes* envelopes);
+    vector<float> synth(float duration_sec, int sample_rate, DeEnvelopes* envelopes);
 
     static const int n_ops = 7; // число операторов в синтезаторе
 

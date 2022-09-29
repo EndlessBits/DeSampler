@@ -1,4 +1,5 @@
 #include "Sound.h"
+#include "DeTypesAssert.h"
 
 
 //--------------------------------------------------------------
@@ -34,7 +35,7 @@ void Sound::exit() {
 
 //--------------------------------------------------------------
 void Sound::audioOut(ofSoundBuffer& output) {
-	INSTR.at_update();
+	//INSTR.at_update();
 }
 
 //--------------------------------------------------------------
@@ -49,13 +50,19 @@ void Sound::update(){
 }
 
 //--------------------------------------------------------------
-void Sound::draw(const ofRectangle& rect) {
+void Sound::draw(const ofRectangle& rect_pix) {
+	ofSetColor(200);
+	ofSetColor(160);
+	ofNoFill();
+	ofDrawRectangle(rect_pix);
+
+	ofSetColor(255);
 
 
 }
 
 //--------------------------------------------------------------
-void Sound::set_sound(vector<float>& mono_sample, int sample_rate) {
+void Sound::set_sound(vector<float>& mono_sound, int sample_rate) {
 
 }
 

@@ -6,14 +6,14 @@ void DeFmSynth::setup(DeParams* p) {
 }
 
 //--------------------------------------------------------------
-vector<float> DeFmSynth::synth(float duration_ms, int sample_rate, DeEnvelopes* envelopes) {
+vector<float> DeFmSynth::synth(float duration_sec, int sample_rate, DeEnvelopes* envelopes) {
     de_assert(p_, "DeFmSynth::synth - please call setup()");
     de_assert(sample_rate > 0, "DeFmSynth::synth - bad sample_rate");
-    de_assert(duration_ms > 0, "DeFmSynth::synth - bad duration_ms");
+    de_assert(duration_sec > 0, "DeFmSynth::synth - bad duration_ms");
 
     sample_rate_ = sample_rate;
     dphase_ = 1.0 / float(sample_rate);
-    int duration_samples = int(duration_ms) * sample_rate;
+    int duration_samples = int(duration_sec) * sample_rate;
     
     float Phase[n_ops] = { 0 };
     float A[n_ops] = { 0 };

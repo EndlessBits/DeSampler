@@ -6,6 +6,7 @@
 #include "DeEnvelopes.h"
 #include "DeEditor.h"
 #include "DeFmSynth.h"
+#include "Sound.h"
 
 class ofApp : public ofBaseApp {
 
@@ -33,7 +34,10 @@ public:
 	DeEditor editor_;			// Редактор огибающих
 	DeFmSynth synth_;			// Синтезатор, для синтеза использует параметры и огибающие
 
-	void load_preset(int i);
-	void save_preset(int i);
-
+	void load_preset(int i = -1);
+	void save_preset(int i = -1);
+	int preset_ = -1;
+	
+	Sound sound_;
+	void play_sound();			// Сгенерировать и воспроизвести звук
 };

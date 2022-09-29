@@ -217,6 +217,9 @@
     <ClCompile Include="src\DeFmLib\DeEditor.cpp">
       <Filter>src\DeFmSynth</Filter>
     </ClCompile>
+    <ClCompile Include="src\Sound.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -592,6 +595,9 @@
     </ClInclude>
     <ClInclude Include="src\DeFmLib\DeEditor.h">
       <Filter>src\DeFmSynth</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sound.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

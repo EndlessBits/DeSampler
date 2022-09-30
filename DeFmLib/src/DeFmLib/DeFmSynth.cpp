@@ -59,10 +59,10 @@ A0*wave(t*(F0
 
 
 float DeFmSynth::get_sample(float* Phase, const float* A, const float* F) {
-	return AA(0) * WAVE(0, FF(0));
-//		+ AA(1) * WAVE(1, FF(1) + AA(2) * WAVE(2, FF(2)) + AA(3) * WAVE(3, FF(3)))
-//		+ AA(4) * WAVE(4, FF(4) + AA(5) * WAVE(5, FF(5)) + AA(6) * WAVE(6, FF(6)))
-	//);
+	return AA(0) * WAVE(0, FF(0)		
+		+ AA(1) * WAVE(1, FF(1) + AA(2) * WAVE(2, FF(2)) + AA(3) * WAVE(3, FF(3)))
+		+ AA(4) * WAVE(4, FF(4) + AA(5) * WAVE(5, FF(5)) + AA(6) * WAVE(6, FF(6)))
+	);
 }
 
 //--------------------------------------------------------------

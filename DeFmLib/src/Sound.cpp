@@ -18,14 +18,15 @@ void Sound::setup() {
 
 
 	stream_sr_ = 22050;
-
-	int buffer_size = 128;
+	int buffer_size = 512; //128;
+	int num_buffers = 4;
 
 	settings.setOutListener(this);
 	settings.sampleRate = stream_sr_;
 	settings.numOutputChannels = 2;
 	settings.numInputChannels = 2;
 	settings.bufferSize = buffer_size;
+	settings.numBuffers = num_buffers;
 	sound_stream_.setup(settings);
 
 }
@@ -40,7 +41,8 @@ void Sound::audioOut(ofSoundBuffer& output) {
 	if (playing_) {
 		const float volume = 0.6f;
 		for (int i = 0; i < output.getNumFrames(); i++) {
-			float value = (play_pos_++ < mono_sound_.size()) ? mono_sound_[i] : 0;
+			float value = (play_pos_ < mono_sound_.size()) ? mono_sound_[play_pos_] : 0;
+			play_pos_++;
 			value *= volume;
 			output.getSample(i, 0) = value;
 			output.getSample(i, 1) = value;

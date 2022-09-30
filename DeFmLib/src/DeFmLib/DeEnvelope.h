@@ -43,6 +43,7 @@ protected:
 	int samples_ = 0;
 	int sample_ = 0;
 	int seg_index_ = 0;	// номер текущего отрезка сэмплирования
+	int seg_final_sample_ = 0;	// последний сэмпл, после которого нужно переключить отрезок
 	float seg_k_ = 0;
 	float seg_a_ = 0;
 

@@ -14,17 +14,20 @@ void ofApp::setup() {
 	ofBackground(32);
 
 	// Параметры конверсии
-	float midi_note0 = 21;
-	float midi_note1 = 108;
-	float db0 = -40;
-	float db1 = 0;
+	DeParamsSettings settings;
+	settings.midi_note0 = 21;
+	settings.midi_note1 = 108;
+	settings.db0 = -40;
+	settings.db1 = 0;
+	settings.mi0 = 0;
+	settings.mi1 = 10;
 
 	// Параметры огибающих
 	DeEnvelopeParams env_params;
 	env_params.type = DeEnvelopeType::Equidistant;
 	env_params.size = 10;
 
-	params_.setup(midi_note0, midi_note1, db0, db1);
+	params_.setup(settings);
 
 	envelopes_.setup(DeFmSynth::n_ops, env_params);
 	editor_.setup(&envelopes_);
@@ -66,6 +69,9 @@ void ofApp::play_sound() {
 	int sample_rate = 22050;
 	vector<float> mono_sound = synth_.synth(duration_sec, sample_rate, &envelopes_);
 	sound_.set_sound(mono_sound, sample_rate);
+	
+	// Воспроизведение
+	sound_.play_sound();
 }
 
 //--------------------------------------------------------------

@@ -2,19 +2,19 @@
 
 
 //--------------------------------------------------------------
-void DeParams::setup(float midi_note0, float midi_note1, float vol0, float vol1)
+void DeParams::setup(const DeParamsSettings& settings)
 {
-	this->midi_note0 = midi_note0;
-	this->midi_note1 = midi_note1;
-	midi_delta_ = midi_note1 - midi_note0;
+	s_ = settings;
+	midi_delta_ = s_.midi_note1 - s_.midi_note0;
 
-	this->db0 = db0;
-	this->db1 = db1;
-	db_delta_ = db1 - db0;
-	float amp0 = db_to_amp_raw(db0);	
-	float amp1 = db_to_amp_raw(db1);
-	db_k_ = 1.0f/(amp1-amp0);			// mapping v in [amp0, amp1] -> k*v + a in [0,1]
+	db_delta_ = s_.db1 - s_.db0;
+	float amp0 = db_to_amp_raw(s_.db0);
+	float amp1 = db_to_amp_raw(s_.db1);
+	db_k_ = 1.0f / (amp1 - amp0);			// mapping v in [amp0, amp1] -> k*v + a in [0,1]
 	db_a_ = -db_k_ * amp0;
+
+	mi_k_ = s_.mi1 - s_.mi0;
+	mi_a_ = s_.mi0;
 }
 
 //--------------------------------------------------------------
@@ -31,8 +31,8 @@ inline float DeParams::db_to_amp_raw(float db) {
 //db to amp, 0..1->0..1
 float DeParams::d2a(float x)
 {
-	x = x * db_delta_ + db0;
-	return db_k_ * db_to_amp_raw(x) + db_a_;		
+	x = x * db_delta_ + s_.db0;
+	return db_k_ * db_to_amp_raw(x) + db_a_;
 }
 
 //--------------------------------------------------------------
@@ -43,8 +43,14 @@ float DeParams::d2a(float x)
 // linear to frequency, 0..1->Hz
 float DeParams::l2f(float x)
 {
-	x = x * midi_delta_ + midi_note0;
+	x = x * midi_delta_ + s_.midi_note0;
 	return pow(2, (x - 69.0f) / 12.0f) * 440.0f;
+}
+
+//--------------------------------------------------------------
+float DeParams::mi(float x)
+{
+	return mi_k_ * x + mi_a_;
 }
 
 //--------------------------------------------------------------
@@ -53,8 +59,8 @@ float DeParams::l2f(float x)
 float DeParams::wave(float phase)
 {
 	phase = phase * 4.0f - 2.0f;	// -2..2
-	return ((phase>=0) ? 1:-1)    // sign
-		   * (1.0f - fabs(fabs(phase) - 1.0f));   //fabs(phase) 0..2
+	return ((phase >= 0) ? 1 : -1)    // sign
+		* (1.0f - fabs(fabs(phase) - 1.0f));   //fabs(phase) 0..2
 }
 
 

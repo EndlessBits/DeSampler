@@ -65,8 +65,8 @@ A0*wave(t*(F0
 
 float DeFmSynth::get_sample(float* Phase, const float* A, const float* F) {
 	return AA(0) * WAVE(0, FF(0)		
-		+ AA(1) * WAVE(1, FF(1) + AA(2) * WAVE(2, FF(2)) + AA(3) * WAVE(3, FF(3)))
-		+ AA(4) * WAVE(4, FF(4) + AA(5) * WAVE(5, FF(5)) + AA(6) * WAVE(6, FF(6)))
+		+ MI(1) * WAVE(1, FF(1) + MI(2) * WAVE(2, FF(2)) + MI(3) * WAVE(3, FF(3)))
+		+ MI(4) * WAVE(4, FF(4) + MI(5) * WAVE(5, FF(5)) + MI(6) * WAVE(6, FF(6)))
 	);
 }
 
@@ -76,7 +76,15 @@ float DeFmSynth::wave(float& phase, float freq) {
 	//if (i == 0) {
 	//	cout << phase << "\t" << freq << "\t" << res << endl;
 	//}
-	phase = fmodf(phase + freq * dphase_, 1);
+	phase += freq * dphase_;
+	if (phase > 1) {
+		phase = fmodf(phase, 1);
+	}
+	else {
+		if (phase < 0) {
+			phase = 1 - fmodf(fabs(phase), 1);
+		}
+	}
 	return res;
 }
 

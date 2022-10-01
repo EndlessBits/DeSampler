@@ -54,7 +54,7 @@ protected:
     // A, F - массивы амплитуд и частот в диапазоне 0..1
     float get_sample(float* Phase, const float* A, const float* F);
 
-    float wave(float& phase, float freq, int i);
+    float wave(float& phase, float freq);
 
     // »щем щелчки дл€ отладки
     void analyze_clicks(const vector<float>& sound);

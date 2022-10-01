@@ -124,6 +124,7 @@ float DeEnvelope::sampling_next_value() {
 	if (sample_ == seg_final_sample_ && seg_index_ + 2 < size_) {
 		set_segment(seg_index_ + 1);
 	}
+	return result;
 }
 
 //--------------------------------------------------------------

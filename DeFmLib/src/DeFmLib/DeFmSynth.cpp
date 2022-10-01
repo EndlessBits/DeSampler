@@ -7,6 +7,7 @@ void DeFmSynth::setup(DeParams* p) {
 
 //--------------------------------------------------------------
 vector<float> DeFmSynth::synth(float duration_sec, int sample_rate, DeEnvelopes* envelopes) {
+	cout << "Synthesizing..." << endl;
 	de_assert(p_, "DeFmSynth::synth - please call setup()");
 	de_assert(sample_rate > 0, "DeFmSynth::synth - bad sample_rate");
 	de_assert(duration_sec > 0, "DeFmSynth::synth - bad duration_ms");
@@ -37,6 +38,10 @@ vector<float> DeFmSynth::synth(float duration_sec, int sample_rate, DeEnvelopes*
 		}
 		sound[i] = get_sample(Phase, A, F);
 	}
+
+	// »щем щелчки дл€ отладки
+	analyze_clicks(sound);
+
 	return sound;
 }
 
@@ -67,13 +72,26 @@ float DeFmSynth::get_sample(float* Phase, const float* A, const float* F) {
 
 //--------------------------------------------------------------
 float DeFmSynth::wave(float& phase, float freq) {
-	// cout << phase << "\t" << freq << endl;
 	float res = p_->wave(phase);
+	//if (i == 0) {
+	//	cout << phase << "\t" << freq << "\t" << res << endl;
+	//}
 	phase = fmodf(phase + freq * dphase_, 1);
 	return res;
 }
 
 //--------------------------------------------------------------
+// »щем щелчки дл€ отладки
+void DeFmSynth::analyze_clicks(const vector<float>& sound) {
+	const float thresh = 0.3;
+	int n = sound.size();
+	for (int i = 0; i < n - 1; i++) {
+		if (fabs(sound[i + 1] - sound[i]) > thresh) {
+			cout << "  CLICK at " << i << endl;
+		}
+	}
+}
 
+//--------------------------------------------------------------
 
 

@@ -40,4 +40,5 @@ public:
 	
 	Sound sound_;
 	void play_sound();			// —генерировать и воспроизвести звук
+	void save_sound();
 };

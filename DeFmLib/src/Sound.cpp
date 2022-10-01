@@ -1,6 +1,6 @@
 #include "Sound.h"
 #include "DeTypesAssert.h"
-
+#include "ofxSoundUtils.h"
 
 //--------------------------------------------------------------
 void Sound::setup() {
@@ -82,7 +82,9 @@ void Sound::draw(const ofRectangle& rect_pix) {
 
 		ofSetColor(255);
 		for (int i = 0; i < w; i++) {
-			float v = mono_sound_[(i * n) / w] * h2;
+			int k = (i * n) / w;
+				//w;
+			float v = mono_sound_[k] * h2;
 			ofDrawLine(x0 + i, y0 + h2, x0 + i, y0 + h2 - v);
 		}
 	}
@@ -100,6 +102,15 @@ void Sound::play_sound() {
 	if (!mono_sound_.empty()) {
 		play_pos_ = 0;
 		playing_ = 1;
+	}
+}
+
+//--------------------------------------------------------------
+void Sound::save_to_file_raw(const string& file_name) {
+	if (!mono_sound_.empty()) {
+		// Запись звука в RAW 16bit PCM, можно открыть из Audacity.
+		cout << "Saving signed 16 bit PCM raw:" << file_name << endl;
+		ofxSoundUtils::save_sound_raw_mono16(mono_sound_, file_name);
 	}
 }
 

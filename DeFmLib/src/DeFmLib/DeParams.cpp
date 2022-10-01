@@ -58,6 +58,8 @@ float DeParams::mi(float x)
 // phase 0..1
 float DeParams::wave(float phase)
 {
+	de_assert(phase >= 0 && phase <= 1, "DeParams::wave - bad phase " + ofToString(phase));
+	
 	phase = phase * 4.0f - 2.0f;	// -2..2
 	return ((phase >= 0) ? 1 : -1)    // sign
 		* (1.0f - fabs(fabs(phase) - 1.0f));   //fabs(phase) 0..2

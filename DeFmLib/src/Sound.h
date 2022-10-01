@@ -14,6 +14,8 @@ public:
 	// Воспроизвести звук
 	void play_sound();
 
+	void save_to_file_raw(const string& file_name);
+
 
 	void audioOut(ofSoundBuffer& output);
 	void audioIn(ofSoundBuffer& input);

@@ -8,6 +8,7 @@ void ofApp::setup() {
 	cout << "1..9 - load preset, Shift+1..9 - save preset" << endl;
 	cout << "L, Shift+S - load/save last opened or saved preset" << endl;
 	cout << "Space - play sound" << endl;
+	cout << "S - save sound" << endl;
 	cout << "--------------------------------------------------" << endl;
 	ofSetWindowTitle(title_);
 
@@ -75,6 +76,11 @@ void ofApp::play_sound() {
 }
 
 //--------------------------------------------------------------
+void ofApp::save_sound() {
+	sound_.save_to_file_raw("sound16pcm.raw");
+}
+
+//--------------------------------------------------------------
 void ofApp::update() {
 
 }
@@ -110,6 +116,7 @@ void ofApp::keyPressed(int key) {
 	if (key == 'S') save_preset();
 
 	if (key == ' ') play_sound();
+	if (key == 's') save_sound();
 
 }
 

@@ -40,7 +40,7 @@ vector<float> DeFmSynth::synth(float duration_sec, int sample_rate, DeEnvelopes*
 	}
 
 	// »щем щелчки дл€ отладки
-	analyze_clicks(sound);
+	// analyze_clicks(sound);
 
 	return sound;
 }

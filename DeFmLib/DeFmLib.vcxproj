@@ -122,7 +122,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib;.\src\DeFmEditor</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ObjectFileName>$(IntDir)</ObjectFileName>
@@ -169,7 +169,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\include;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\fftw\lib;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\libs\kiss;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFft\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\libs\fontstash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxFontStash\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKu\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxKuTextGui\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\ip\win32;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxOsc\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxSoundUtils\src;..\..\..\..\of_v0.10.1_vs2017_release\addons\ofxWindows\src;.\src\DeFmLib;.\src\DeFmEditor</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <PreprocessorDefinitions>USE_OFX_FONTSTASH</PreprocessorDefinitions>
@@ -188,8 +188,8 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\DeFmLib\DeEditGraph.cpp" />
-    <ClCompile Include="src\DeFmLib\DeEditor.cpp" />
+    <ClCompile Include="src\DeFmEditor\DeEditGraph.cpp" />
+    <ClCompile Include="src\DeFmEditor\DeEditor.cpp" />
     <ClCompile Include="src\DeFmLib\DeEnvelope.cpp" />
     <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp" />
     <ClCompile Include="src\DeFmLib\DeFmSynth.cpp" />
@@ -263,8 +263,8 @@
     <ClCompile Include="src\Sound.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\DeFmLib\DeEditGraph.h" />
-    <ClInclude Include="src\DeFmLib\DeEditor.h" />
+    <ClInclude Include="src\DeFmEditor\DeEditGraph.h" />
+    <ClInclude Include="src\DeFmEditor\DeEditor.h" />
     <ClInclude Include="src\DeFmLib\DeEnvelope.h" />
     <ClInclude Include="src\DeFmLib\DeEnvelopes.h" />
     <ClInclude Include="src\DeFmLib\DeFmSynth.h" />

@@ -211,14 +211,14 @@
     <ClCompile Include="src\DeFmLib\DeEnvelopes.cpp">
       <Filter>src\DeFmSynth</Filter>
     </ClCompile>
-    <ClCompile Include="src\DeFmLib\DeEditGraph.cpp">
-      <Filter>src\DeFmSynth</Filter>
-    </ClCompile>
-    <ClCompile Include="src\DeFmLib\DeEditor.cpp">
-      <Filter>src\DeFmSynth</Filter>
-    </ClCompile>
     <ClCompile Include="src\Sound.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeFmEditor\DeEditGraph.cpp">
+      <Filter>src\DeFmEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="src\DeFmEditor\DeEditor.cpp">
+      <Filter>src\DeFmEditor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +311,9 @@
     </Filter>
     <Filter Include="src\DeFmSynth">
       <UniqueIdentifier>{737ef0ec-d9b5-46a9-b15b-ce18caf573d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\DeFmEditor">
+      <UniqueIdentifier>{6c442382-cf67-4a3f-8fee-ee4e036c6d2c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -590,14 +593,14 @@
     <ClInclude Include="src\DeFmLib\DeEnvelopes.h">
       <Filter>src\DeFmSynth</Filter>
     </ClInclude>
-    <ClInclude Include="src\DeFmLib\DeEditGraph.h">
-      <Filter>src\DeFmSynth</Filter>
-    </ClInclude>
-    <ClInclude Include="src\DeFmLib\DeEditor.h">
-      <Filter>src\DeFmSynth</Filter>
-    </ClInclude>
     <ClInclude Include="src\Sound.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmEditor\DeEditGraph.h">
+      <Filter>src\DeFmEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DeFmEditor\DeEditor.h">
+      <Filter>src\DeFmEditor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
